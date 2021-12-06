@@ -1,0 +1,5 @@
+" Generic gvim config.
+" gvim automatically sources vimrc.
+
+set guifont=inconsolata\ 16
+set lines=40 columns=150
