@@ -1,66 +1,3 @@
-"---------------------------------"
-" Set up Vundle to handle plugins "
-"---------------------------------"
-
-" To install Vundle, do
-" Linux:	git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
-" Windows:	git clone https://github.com/VundleVim/Vundle.vim.git ~/vimfiles/bundle/Vundle.vim
-
-filetype off                  " required
-if has("win32")
-	set shellslash
-
-	" set the runtime path to include Vundle and initialize
-	set rtp+=~/vimfiles/bundle/Vundle.vim
-	call vundle#begin('~/vimfiles/bundle')
-else
-	set nocompatible              " be iMproved, required
-
-	" set the runtime path to include Vundle and initialize
-	set rtp+=~/.vim/bundle/Vundle.vim
-	call vundle#begin()
-endif
-" alternatively, pass a path where Vundle should install plugins
-"call vundle#begin('~/some/path/here')
-
-" let Vundle manage Vundle, required
-Plugin 'VundleVim/Vundle.vim'
-Plugin 'syntastic'
-" Plugin 'uarun/vim-protobuf'
-" Plugin 'fatih/vim-go'
-" Plugin 'rust-lang/rust.vim'
-" Plugin 'bash-support'
-" Plugin 'file://~/.vim/bundle/myplugin'
-" Plugin 'vim/killersheep'
-" Plugin 'yegappan/taglist'
-
-call vundle#end()			" required
-filetype plugin indent on	" required
-" To ignore plugin indent changes, instead use:
-"filetype plugin on
-"
-" Brief help
-" :PluginList       - lists configured plugins
-" :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
-" :PluginSearch foo - searches for foo; append `!` to refresh local cache
-" :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
-"
-" see :h vundle for more details or wiki for FAQ
-" Put your non-Plugin stuff after this line
-
-
-"----------------"
-" Plugin Options "
-"----------------"
-
-" Syntastic
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
-let g:syntastic_python_checkers = ['python']
-
-
 "------------------"
 " Set up the looks "
 "------------------"
@@ -83,10 +20,6 @@ set statusline+=%#warningmsg#%{&ff!='unix'?'['.&ff.']':''}%*	" show file format 
 set statusline+=%3*\ [e:%{&fenc!=''?&fenc:'none'}]\ %=%k%*		" file encoding
 set statusline+=%4*%{v:register}\ \ %*							" active register
 set statusline+=%5*\ L:%l/%L\ \ C:%c%V\ %*						" cursor pos
-" syntastic
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
 
 " Change Highlight Colours for cterm
 " For statusline
@@ -195,17 +128,6 @@ nnoremap <localleader>wj <C-W><C-J>
 nnoremap <localleader>wk <C-W><C-K>
 nnoremap <localleader>wl <C-W><C-L>
 nnoremap <localleader>wh <C-W><C-H>
-
-" Syntastic variables
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
-let g:syntastic_auto_jump = 1
 
 " bash-support variables
 let g:BASH_MapLeader = ","

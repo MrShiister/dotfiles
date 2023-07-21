@@ -1,7 +1,0 @@
-" Windows vim config.
-" Sources generic config vimrc for vim.
-
-let path = expand('%:p:h:h')
-execute "source" path."/.vim/vimrc"
-
-set fileformats=unix,dos

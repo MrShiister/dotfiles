@@ -1,0 +1,17 @@
+#!/bin/sh
+
+# Get ZSH shell
+{{ if or (eq .chezmoi.osRelease.id "ubuntu") (eq .chezmoi.osRelease.id "debian") }}
+sudo apt install zsh
+{{ end }}
+{{ else if eq .chezmoi.osRelease.id "arch" }}
+pacman -S zsh
+{{ end }}
+
+chsh -s $(which zsh)
+
+# Get oh-my-zsh
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+
+# Get Powerlever10k theme for ZSH
+git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k

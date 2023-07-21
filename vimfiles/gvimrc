@@ -1,7 +1,0 @@
-" Windows gvim config.
-" gvim automatically sources vimrc before this script.
-
-let path = expand('%:p:h:h')
-execute "source" path."/.vim/gvimrc"
-
-set guifont=consolas:h12
