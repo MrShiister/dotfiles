@@ -2,7 +2,7 @@
 
 # Get ZSH shell
 {{ if eq .chezmoi.osRelease.id "ubuntu" "debian" }}
-sudo apt install zsh
+sudo apt install zsh zsh-syntax-highlighting
 {{ else if eq .chezmoi.osRelease.id "arch" }}
 pacman -S zsh
 {{ end }}
@@ -17,3 +17,8 @@ echo 'oh-my-zsh is installed'
 # Get Powerlever10k theme for ZSH
 git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
 echo 'powerlever10k theme for ZSH is installed'
+
+# Get zsh-vi-mode plugin
+git clone https://github.com/jeffreytse/zsh-vi-mode $ZSH_CUSTOM/plugins/zsh-vi-mode
+
+# 
