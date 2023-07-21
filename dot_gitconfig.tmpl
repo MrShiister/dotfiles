@@ -1,8 +1,10 @@
+chezmoi:template:missing-key=zero
+
 # This is Git's per-user configuration file.
 [user]
 	name = mrshiister
 	email = 31813485+MrShiister@users.noreply.github.com
-	signingkey = {{ or .signingkey '' }}
+	signingkey = {{ .signingkey }}
 [commit]
 	gpgsign = true
 [core]

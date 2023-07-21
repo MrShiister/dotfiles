@@ -1,9 +1,8 @@
 #!/bin/sh
 
 # Get ZSH shell
-{{ if or (eq .chezmoi.osRelease.id "ubuntu") (eq .chezmoi.osRelease.id "debian") }}
+{{ if eq .chezmoi.osRelease.id "ubuntu" "debian" }}
 sudo apt install zsh
-{{ end }}
 {{ else if eq .chezmoi.osRelease.id "arch" }}
 pacman -S zsh
 {{ end }}
