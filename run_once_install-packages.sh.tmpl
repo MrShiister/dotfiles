@@ -1,11 +1,15 @@
 #!/bin/sh
 
+packages=(vim zsh zsh-syntax-highlighting)
+
 # Get ZSH shell
 {{ if eq .chezmoi.osRelease.id "ubuntu" "debian" }}
 sudo apt update
-sudo apt install -y vim zsh zsh-syntax-highlighting
+sudo apt install -y ${packages}
 {{ else if eq .chezmoi.osRelease.id "arch" }}
-pacman -S zsh
+sudo pacman -Syu ${packages}
+{{ else if eq .chezmoi.osRelease.id "alpine" }}
+sudo apk add ${packages}
 {{ end }}
 
 sudo chsh -s $(which zsh)
