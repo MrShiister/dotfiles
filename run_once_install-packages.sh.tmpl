@@ -1,6 +1,6 @@
 #!/bin/sh
 
-packages=(vim zsh zsh-syntax-highlighting)
+packages="vim zsh zsh-syntax-highlighting"
 
 # Get ZSH shell
 {{ if eq .chezmoi.osRelease.id "ubuntu" "debian" }}
