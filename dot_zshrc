@@ -141,7 +141,6 @@ ZVM_LINE_INIT_MODE=$ZVM_MODE_INSERT
 source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh || source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # Custom variables
-export JAVA_HOME=/usr/local/openjdk/jdk-20.0.1
 export GPG_TTY=$(tty)
 export PATH=$HOME/bin:$PATH
 
