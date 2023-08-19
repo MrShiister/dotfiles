@@ -1,13 +1,13 @@
 #!/bin/sh
 
-packages="vim zsh zsh-syntax-highlighting"
+packages="vim zsh"
 
 # Get ZSH shell
 {{ if eq .chezmoi.osRelease.id "ubuntu" "debian" }}
 sudo apt update
 sudo apt install -y ${packages}
 {{ else if eq .chezmoi.osRelease.id "arch" }}
-sudo pacman -Syu ${packages}
+sudo pacman -Syu yay ${packages}
 {{ else if eq .chezmoi.osRelease.id "alpine" }}
 sudo apk add ${packages}
 {{ end }}
@@ -18,15 +18,3 @@ echo 'ZSH is installed'
 # Get oh-my-zsh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 echo 'oh-my-zsh is installed'
-
-# Get Powerlever10k theme for ZSH
-git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
-echo 'powerlever10k theme for ZSH is installed'
-
-# Get zsh-vi-mode plugin
-git clone --depth=1 https://github.com/jeffreytse/zsh-vi-mode ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/plugins/zsh-vi-mode
-echo 'zsh-vi-mode is installed'
-
-# Get zsh-autosuggestions
-git clone --depth=1 https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
-echo 'zsh-autosuggestions is installed'

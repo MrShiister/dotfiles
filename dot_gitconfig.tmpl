@@ -1,6 +1,5 @@
 chezmoi:template:missing-key=zero
 {{- if not ( env "REMOTE_CONTAINERS" ) -}}
-
 # This is Git's per-user configuration file.
 [user]
 	name = mrshiister
@@ -10,5 +9,4 @@ chezmoi:template:missing-key=zero
 	gpgsign = true
 [core]
 	editor = code
-
 {{- end -}}
