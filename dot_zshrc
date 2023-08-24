@@ -146,11 +146,8 @@ if which az > /dev/null; then
 	source /etc/bash_completion.d/azure-cli
 fi
 
-if which helm > /dev/null; then
-	if [[ ! -f $ZSH/completions/_helm ]]; then
-		helm completion zsh > $ZSH/completions/_helm
-	fi
-	source $ZSH/completions/_helm
+if which helm > /dev/null && [[ ! -f $ZSH/completions/_helm ]]; then
+	helm completion zsh > $ZSH/completions/_helm
 fi
 
 [[ ! -f $ZSH/custom/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ]] || source $ZSH/custom/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
