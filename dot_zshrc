@@ -142,12 +142,4 @@ ZVM_LINE_INIT_MODE=$ZVM_MODE_INSERT
 export GPG_TTY=$(tty)
 export PATH=$HOME/.local/bin:$HOME/bin:$PATH
 
-if which az > /dev/null; then
-	source /etc/bash_completion.d/azure-cli
-fi
-
-if which helm > /dev/null && [[ ! -f $ZSH/completions/_helm ]]; then
-	helm completion zsh > $ZSH/completions/_helm
-fi
-
 [[ ! -f $ZSH/custom/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ]] || source $ZSH/custom/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
