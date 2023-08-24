@@ -142,27 +142,15 @@ ZVM_LINE_INIT_MODE=$ZVM_MODE_INSERT
 export GPG_TTY=$(tty)
 export PATH=$HOME/.local/bin:$HOME/bin:$PATH
 
-# Run ssh-agent
-env=~/.ssh/agent.env
-
-agent_load_env () { test -f "$env" && . "$env" >| /dev/null ; }
-
-agent_start () {
-	(umask 077; ssh-agent >| "$env")
-	. "$env" >| /dev/null ; }
-
-	agent_load_env
-
-# agent_run_state: 0=agent running w/ key; 1=agent w/o key; 2=agent not running
-agent_run_state=$(ssh-add -l >| /dev/null 2>&1; echo $?)
-
-if [ ! "$SSH_AUTH_SOCK" ] || [ $agent_run_state = 2 ]; then
-	agent_start
-	ssh-add &>/dev/null
-elif [ "$SSH_AUTH_SOCK" ] && [ $agent_run_state = 1 ]; then
-	ssh-add &>/dev/null
+if which az > /dev/null; then
+	source /etc/bash_completion.d/azure-cli
 fi
 
-unset env
+if which helm > /dev/null; then
+	if [[ ! -f $ZSH/completions/_helm ]]; then
+		helm completion zsh > $ZSH/completions/_helm
+	fi
+	source $ZSH/completions/_helm
+fi
 
 [[ ! -f $ZSH/custom/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ]] || source $ZSH/custom/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
