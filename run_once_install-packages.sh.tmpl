@@ -1,6 +1,6 @@
 #!/bin/sh
 
-if [ "$(whoami)" -eq "root" ]; then
+if [ "$(id -u)" -eq 0 ]; then
     echo "Should not execute as root. Create a user if you haven't and install sudo."
     echo "Exiting..."
     exit 1
