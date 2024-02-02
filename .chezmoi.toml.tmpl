@@ -1,0 +1,4 @@
+{{- $devcontainer:= or ( env "CODESPACES" ) ( env "REMOTE_CONTAINERS" ) | not | not -}}
+
+[data]
+    devcontainer = {{ $devcontainer }}

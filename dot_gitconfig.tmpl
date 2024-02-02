@@ -1,5 +1,5 @@
 chezmoi:template:missing-key=zero
-{{- if and (not ( env "REMOTE_CONTAINERS" )) ( not ( env "CODESPACES")) -}}
+{{- if not .devcontainer -}}
 # This is Git's per-user configuration file.
 [user]
 	name = mrshiister

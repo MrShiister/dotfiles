@@ -9,9 +9,5 @@ sudo apt install -y ${packages}
 {{ else if eq .chezmoi.osRelease.id "arch" }}
 sudo pacman -Syu yay ${packages}
 {{ else if eq .chezmoi.osRelease.id "alpine" }}
-apk add ${packages} sudo curl git
+sudo apk add ${packages}
 {{ end }}
-
-# Get oh-my-zsh
-# sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" && \
-# echo 'oh-my-zsh is installed'
