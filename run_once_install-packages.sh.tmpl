@@ -1,6 +1,15 @@
 #!/bin/sh
 
-packages="vim zsh"
+if [ "$(whoami)" -eq "root" ]; then
+    echo "Should not execute as root. Create a user if you haven't and install sudo."
+    echo "Exiting..."
+    exit 1
+fi
+
+packages="vim tmux"
+{{ if not .devcontainer }}
+packages+="git zsh"
+{{ end }}
 
 # Get ZSH shell
 {{ if eq .chezmoi.osRelease.id "ubuntu" "debian" }}
