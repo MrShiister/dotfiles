@@ -7,10 +7,10 @@ packages="${packages} git zsh"
 
 # Get ZSH shell
 {{ if eq .chezmoi.osRelease.id "ubuntu" "debian" }}
-{{- .addsudo }} apt update
-{{- .addsudo }} apt install -y ${packages}
+{{ .sudo }}apt update
+{{ .sudo }}apt install -y ${packages}
 {{ else if eq .chezmoi.osRelease.id "arch" }}
-{{- .addsudo }} pacman -Syu yay ${packages}
+{{ .sudo }}pacman -Syu yay ${packages}
 {{ else if eq .chezmoi.osRelease.id "alpine" }}
-{{- .addsudo }} apk add ${packages}
+{{ .sudo }}apk add ${packages}
 {{ end }}

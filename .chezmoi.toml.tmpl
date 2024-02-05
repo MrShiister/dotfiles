@@ -3,4 +3,4 @@
 
 [data]
     devcontainer = {{ $devcontainer }}
-    addsudo = {{ if not $isroot }}"sudo"{{ else }}""{{ end }}
+    sudo = {{ if not $isroot }}"sudo "{{ else }}""{{ end }}
