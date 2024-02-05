@@ -1,11 +1,5 @@
 #!/bin/sh
 
-if [ "$(id -u)" -eq 0 ]; then
-    echo "Should not execute as root. Create a user if you haven't and add them to the sudo group."
-    echo "Exiting..."
-    exit 1
-fi
-
 packages="vim tmux"
 {{ if not .devcontainer }}
 packages="${packages} git zsh"
@@ -13,10 +7,10 @@ packages="${packages} git zsh"
 
 # Get ZSH shell
 {{ if eq .chezmoi.osRelease.id "ubuntu" "debian" }}
-sudo apt update
-sudo apt install -y ${packages}
+{{- .addsudo }} apt update
+{{- .addsudo }} apt install -y ${packages}
 {{ else if eq .chezmoi.osRelease.id "arch" }}
-sudo pacman -Syu yay ${packages}
+{{- .addsudo }} pacman -Syu yay ${packages}
 {{ else if eq .chezmoi.osRelease.id "alpine" }}
-sudo apk add ${packages}
+{{- .addsudo }} apk add ${packages}
 {{ end }}

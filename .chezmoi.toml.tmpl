@@ -1,4 +1,6 @@
 {{- $devcontainer:= or ( env "CODESPACES" ) ( env "REMOTE_CONTAINERS" ) | not | not -}}
+{{- $isroot:= eq .chezmoi.uid "0" -}}
 
 [data]
     devcontainer = {{ $devcontainer }}
+    addsudo = {{ if not $isroot }}"sudo"{{ else }}""{{ end }}
