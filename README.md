@@ -8,5 +8,5 @@ All personal configuration files
 - `curl`
 
 ```bash
-sh -c "$(curl -fsLS get.chezmoi.io/lb)" -- init --apply mrshiister
+sh -c "$(curl -fsLS get.chezmoi.io)" -- -b $HOME/.local/bin init --apply mrshiister
 ```

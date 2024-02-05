@@ -5,7 +5,6 @@ packages="vim tmux"
 packages="${packages} git zsh"
 {{ end }}
 
-# Get ZSH shell
 {{ if eq .chezmoi.osRelease.id "ubuntu" "debian" }}
 {{ .sudo }}apt update
 {{ .sudo }}apt install -y ${packages}
