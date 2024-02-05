@@ -1,14 +1,14 @@
 #!/bin/sh
 
 if [ "$(id -u)" -eq 0 ]; then
-    echo "Should not execute as root. Create a user if you haven't and install sudo."
+    echo "Should not execute as root. Create a user if you haven't and add them to the sudo group."
     echo "Exiting..."
     exit 1
 fi
 
 packages="vim tmux"
 {{ if not .devcontainer }}
-packages+="git zsh"
+packages="${packages} git zsh"
 {{ end }}
 
 # Get ZSH shell
