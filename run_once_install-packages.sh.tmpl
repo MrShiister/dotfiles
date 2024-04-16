@@ -15,5 +15,5 @@ packages="${packages} git zsh"
 {{ end }}
 
 if ! chsh -s $(which zsh) $USER; then 
-    echo "Failed to change default shell to `zsh`.
+    echo "Failed to change default shell to zsh."
 fi
