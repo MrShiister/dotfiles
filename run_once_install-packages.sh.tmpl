@@ -9,7 +9,7 @@ packages="${packages} git zsh"
 {{ .sudo }}apt update
 {{ .sudo }}apt install -y ${packages}
 {{ else if eq .chezmoi.osRelease.id "arch" }}
-{{ .sudo }}pacman -Syu yay ${packages}
+{{ .sudo }}pacman -Syu g${packages}
 {{ else if eq .chezmoi.osRelease.id "alpine" }}
 {{ .sudo }}apk add ${packages}
 {{ end }}
