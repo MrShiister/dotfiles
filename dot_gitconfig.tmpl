@@ -1,0 +1,14 @@
+chezmoi:template:missing-key=zero
+# This is Git's per-user configuration file.
+[user]
+	name = MrShiister
+	email = 31813485+MrShiister@users.noreply.github.com
+	signingkey = {{ .signingkey }}
+[commit]
+	gpgsign = true
+[core]
+	editor = nvim
+[credential "https://github.com"]
+	helper = !/usr/bin/gh auth git-credential
+[credential "https://gist.github.com"]
+	helper = !/usr/bin/gh auth git-credential

@@ -1,0 +1,9 @@
+README.md
+LICENSE
+install.sh
+.oh-my-zsh/cache/
+**/*.zwc
+{{ if .devcontainer -}}
+.gitconfig
+.gnupg
+{{- end }}

@@ -1,0 +1,12 @@
+{{- $devcontainer:= or ( env "CODESPACES" ) ( env "REMOTE_CONTAINERS" ) | not | not -}}
+{{- $isroot:= eq .chezmoi.uid "0" -}}
+{{- if $devcontainer -}}
+sourceDir = "~/dotfiles"
+
+{{ end -}}
+[data]
+    devcontainer = {{ $devcontainer }}
+    sudo = {{ if not $isroot }}"sudo "{{ else }}""{{ end }}
+{{ if not $devcontainer }}
+    signingkey = "UNSET"
+{{ end }}
