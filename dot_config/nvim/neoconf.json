@@ -1,0 +1,17 @@
+{
+  "neoconf": {
+    "plugins": {
+      "lspconfig": {
+        "enabled": true
+      }
+    },
+    "jsonls": {
+      "enabled": true
+    }
+  },
+  "lspconfig": {
+    "rust_analyzer": {
+      "rust-analyzer.runnables.extraArgs": "--release"
+    }
+  }
+}
