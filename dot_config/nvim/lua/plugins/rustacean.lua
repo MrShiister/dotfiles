@@ -9,5 +9,6 @@ return {
         ["rust-analyzer"] = {},
       },
     },
+    load_vscode_settings = true,
   },
 }
