@@ -16,7 +16,7 @@ alias devup="devcontainer up \
 --mount type=bind,source=$HOME/.gnupg/trustdb.gpg,target=/home/vscode/.gnupg/trustdb.gpg \
 --mount type=bind,source=/run/user/1000/gnupg/S.gpg-agent.extra,target=/home/vscode/.gnupg/S.gpg-agent \
 --mount type=bind,source=$HOME/.gitconfig,target=/home/vscode/.gitconfig \
---mount type=bind,source=$HOME/.config/gh/hosts.yml,target=/home/vscode/.config/gh/hosts.yml
+--mount type=bind,source=$HOME/.config/gh/hosts.yml,target=/home/vscode/.config/gh/hosts.yml \
 --workspace-folder "
 
 alias devex="devcontainer exec --remote-env "TERM=$TERM" --workspace-folder "
