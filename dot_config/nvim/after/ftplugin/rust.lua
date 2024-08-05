@@ -1,9 +1,11 @@
-local bufnr = vim.api.nvim_get_current_buf()
+-- local bufnr = vim.api.nvim_get_current_buf()
 
+-- Original mapping is <leader>cd.
+-- New keymap clashes with :Telescope find_files.
 -- Open the floating error help
-vim.keymap.set(
-  "n",
-  "<leader><Space>",
-  vim.diagnostic.open_float,
-  { desc = "Diagnostic: Open Float", silent = true, buffer = bufnr }
-)
+-- vim.keymap.set(
+--   "n",
+--   "<leader><Space>",
+--   vim.diagnostic.open_float,
+--   { desc = "Diagnostic: Open Float", silent = true, buffer = bufnr }
+-- )

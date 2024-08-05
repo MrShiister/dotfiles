@@ -6,9 +6,18 @@ return {
   opts = {
     server = {
       default_settings = {
-        ["rust-analyzer"] = {},
+        ["rust-analyzer"] = {
+          cargo = {
+            -- target = "wasm32-wasip1",
+            -- allFeatures = true,
+            -- extraEnv = {
+            --   ["RUSTFLAGS"] = "--cfg tokio_unstable",
+            -- },
+          },
+          check = {},
+        },
       },
+      load_vscode_settings = true,
     },
-    load_vscode_settings = true,
   },
 }
