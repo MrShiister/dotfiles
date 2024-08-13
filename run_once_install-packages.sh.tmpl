@@ -1,9 +1,12 @@
 {{- if eq .chezmoi.osRelease.id "ubuntu" "debian" -}}
 #!/bin/sh
 
-packages="tmux fd-find gh"
+packages="tmux fd-find"
 {{ if not .devcontainer }}
 packages="${packages} git zsh"
+{{ end }}
+{{- if eq .chezmoi.osRelease.id "debian" -}}
+packages="${packages} gh"
 {{ end }}
 
 {{ .sudo }}apt update
