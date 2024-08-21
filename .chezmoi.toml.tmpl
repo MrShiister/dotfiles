@@ -1,12 +1,20 @@
-{{- $devcontainer:= or ( env "CODESPACES" ) ( env "REMOTE_CONTAINERS" ) | not | not -}}
-{{- $isroot:= eq .chezmoi.uid "0" -}}
-{{- if $devcontainer -}}
+{{- $is_devcontainer:= or ( env "CODESPACES" ) ( env "REMOTE_CONTAINERS" ) | not | not -}}
+{{- $is_root:= eq .chezmoi.uid "0" -}}
+{{- $get_gh_cli := true -}}
+{{- $get_devcontainer_cli := false -}}
+{{- if not $is_devcontainer -}}
+{{-   $get_gh_cli = promptBool "Install gh cli" true -}}
+{{-   $get_devcontainer_cli = promptBool "Install nodejs and devcontainer cli" true -}}
+{{- end -}}
+{{- if $is_devcontainer -}}
 sourceDir = "~/dotfiles"
 
 {{ end -}}
 [data]
-    devcontainer = {{ $devcontainer }}
-    sudo = {{ if not $isroot }}"sudo "{{ else }}""{{ end }}
-{{ if not $devcontainer }}
+    is_devcontainer = {{ $is_devcontainer }}
+    sudo = {{ if not $is_root }}"sudo "{{ else }}""{{ end }}
+    get_gh_cli = {{ $get_gh_cli }}
+    get_devcontainer_cli = {{ $get_devcontainer_cli }}
+{{ if not $is_devcontainer }}
     signingkey = "UNSET"
 {{ end }}

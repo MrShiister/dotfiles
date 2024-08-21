@@ -2,8 +2,9 @@ README.md
 LICENSE
 install.sh
 .oh-my-zsh/cache/
+.oh-my-zsh/completions/
 **/*.zwc
-{{ if .devcontainer -}}
+{{ if .is_devcontainer -}}
 .gitconfig
 .gnupg
 {{- end }}

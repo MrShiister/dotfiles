@@ -1,20 +1,35 @@
 # dotfiles
+
 All personal configuration files
 
 # Onboard a new machine
+
+## Prompt Options
+
+The installation script allows option to install GitHub's gh cli, and the devcontainer cli (which requires nodejs).
+
+Do one of the following:
+
+1. Leave the `--promptDefaults` flag on, which evaluates to true for all options.
+1. Remove the `--promptDefaults` flag, and be prompted during installation (1, on, t, true, y, yes / 0, off, f, false, n, no).
+1. Replace `--promptDefaults` with the following, choosing between true/false):
+
+   ```bash
+   `--promptBool "Install gh cli"=false,"Install nodejs and devcontainer cli"=false`
+   ```
 
 ## Prereqs
 
 - `curl`
 
 ```bash
-sh -c "$(curl -fsLS get.chezmoi.io)" -- -b $HOME/.local/bin init --apply mrshiister
+sh -c "$(curl -fsLS get.chezmoi.io)" -- -b $HOME/.local/bin init --apply mrshiister --promptDefaults
 ```
 
 Optionally, change the default shell to `zsh`.
 
 ```bash
-chsh -s /bin/zsh $USER
+sudo chsh -s /bin/zsh $USER
 ```
 
 ## WSL
@@ -29,3 +44,4 @@ Before creating devcontainers,
 1. `chezmoi edit-config` and add the key ID.
 1. `chezmoi apply --dry-run` to check, then apply.
 1. `gh auth login` to cache GitHub credentials.
+
