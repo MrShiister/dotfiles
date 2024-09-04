@@ -4,10 +4,12 @@ live_config_reload = true
 padding = { x = 5, y = 3 }
 dynamic_padding = true
 resize_increments = true
+dimensions = { columns = 176, lines = 40 }
 
 [font]
-normal = { family = "MesloLGS NF", style = "Regular" }
+normal = { family = "MesloLGS Nerd Font", style = "Regular" }
 size = 12
+offset = { x = -1, y = 0}
 
 [colors.primary]
 foreground = "#b9bcba"
