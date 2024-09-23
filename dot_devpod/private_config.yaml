@@ -1,0 +1,18 @@
+contexts:
+  default:
+    defaultIde: none
+    defaultProvider: docker
+    options:
+      DOTFILES_SCRIPT:
+        userProvided: true
+        value: install.sh
+      DOTFILES_URL:
+        userProvided: true
+        value: https://github.com/mrshiister/dotfiles
+      GPG_AGENT_FORWARDING:
+        userProvided: true
+        value: "true"
+      TELEMETRY:
+        userProvided: true
+        value: "false"
+defaultContext: default
