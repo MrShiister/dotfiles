@@ -15,10 +15,14 @@ return {
 
   {
     "neovim/nvim-lspconfig",
-    -- dependencies = {
-    --   { "folke/neoconf.nvim", cmd = "Neoconf", config = true },
-    -- },
     opts = {
+      ensure_installed = {
+        "esbonio",
+        "lua-language-server",
+        "shfmt",
+        "stylua",
+        "taplo",
+      },
       setup = {
         -- Don't use nvim-lspconfig for rust as rustaceanvim is preferred
         rust_analyzer = function()
@@ -30,9 +34,6 @@ return {
 
   {
     "mrcjkb/rustaceanvim",
-    -- dependencies = {
-    --   { "folke/neoconf.nvim", cmd = "Neoconf", config = true },
-    -- },
     opts = {
       server = {
         default_settings = {

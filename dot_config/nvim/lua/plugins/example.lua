@@ -87,7 +87,6 @@ return {
           vim.keymap.set( "n", "<leader>co", "TypescriptOrganizeImports", { buffer = buffer, desc = "Organize Imports" })
           vim.keymap.set("n", "<leader>cR", "TypescriptRenameFile", { desc = "Rename File", buffer = buffer })
         end)
-
       end,
     },
     ---@class PluginLspOpts
@@ -162,7 +161,6 @@ return {
     end,
   },
 
-
   -- or you can return new options to override all the defaults
   {
     "nvim-lualine/lualine.nvim",
@@ -173,7 +171,6 @@ return {
       }
     end,
   },
-
 
   -- use mini.starter instead of alpha
   { import = "lazyvim.plugins.extras.ui.mini-starter" },
