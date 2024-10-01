@@ -8,3 +8,6 @@ install.sh
 .gitconfig
 .gnupg
 {{- end }}
+{{ if stat (joinPath .chezmoi.homeDir ".devpod" "config.yaml") }}
+.devpod/config.yaml
+{{ end }}
