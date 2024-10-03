@@ -10,10 +10,13 @@ end
 
 if vim.fn.has("wsl") == 1 then
   if vim.env.REMOTE_CONTAINERS then
+    -- 1. install socat on both host and container
+    -- 2. set range to the docker network `ip route show`
+    -- 3. choose an arbitrary port
+    -- 4. run on your host:
+    --    socat tcp-listen:8121,fork,range=172.17.0.0/16 EXEC:'clip.exe'
     vim.g.clipboard = {
-      name = "WslInDevContainerClipboard",
-      -- run on your host (needs socat on both host and container):
-      -- socat tcp-listen:8121,fork,bind=0.0.0.0 EXEC:'clip.exe'
+      name = "ContainerInWslClipboard",
       copy = {
         ["+"] = "socat - tcp:172.17.0.1:8121",
         ["*"] = "socat - tcp:172.17.0.1:8121",
