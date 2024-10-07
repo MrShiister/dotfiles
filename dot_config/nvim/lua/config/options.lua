@@ -20,15 +20,19 @@ end
 --     2. run on a new WSL shell:
 --          socat tcp-listen:8121,fork,range=172.17.0.0/16 EXEC:'clip.exe'
 -- 3b. if using remote VM or remote devcontainers,
---     1. add `RemoteForward 8121 localhost:8121` in `.ssh/config` for your remote machine
+--     1. add `RemoteForward 8121 localhost:8121` in `.ssh/config` to your remote machine or container
 --     2. run on a new WSL shell:
 --          socat tcp-listen:8121,fork,bind=0.0.0.0 EXEC:'clip.exe'
 --
+
+-- Always use clipboard
+vim.opt.clipboard = "unnamedplus"
+
 if vim.fn.has("wsl") == 1 then
   -- If you are in a devcontainer, access the clipboard by forwarding to localhost
   if vim.env.REMOTE_CONTAINERS then
     vim.g.clipboard = {
-      name = "ContainerClipboard",
+      name = "WSLContainerClipboard",
       copy = {
         ["+"] = "socat - tcp:172.17.0.1:8121",
         ["*"] = "socat - tcp:172.17.0.1:8121",
@@ -57,7 +61,7 @@ if vim.fn.has("wsl") == 1 then
 else
   -- If you are in a remote machine, access the clipboard through the RemoteForward configuration.
   vim.g.clipboard = {
-    name = "ContainerClipboard",
+    name = "RemoteClipboard",
     copy = {
       ["+"] = "socat - tcp:127.0.0.1:8121",
       ["*"] = "socat - tcp:127.0.0.1:8121",
