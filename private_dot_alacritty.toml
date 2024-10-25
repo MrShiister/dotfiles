@@ -1,4 +1,3 @@
-live_config_reload = true
 
 [window]
 padding = { x = 5, y = 3 }
@@ -38,4 +37,7 @@ blue = "#186de3"
 magenta = "#fb0067"
 cyan = "#2e706d"
 white = "#fdffb9"
+
+[general]
+live_config_reload = true
 
