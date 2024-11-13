@@ -6,7 +6,7 @@ All personal configuration files
 
 ## Prompt Options
 
-The installation script allows option to install GitHub's gh cli, and the devcontainer cli (which requires nodejs).
+The installation script allows option to install GitHub's gh cli, and the Devpod cli.
 
 Do one of the following:
 
@@ -15,7 +15,7 @@ Do one of the following:
 1. Replace `--promptDefaults` with the following, choosing between true/false):
 
    ```bash
-   `--promptBool "Install gh cli"=false,"Install nodejs and devcontainer cli"=false`
+   `--promptBool "Install gh cli"=false,"Install devpod cli"=false`
    ```
 
 ## Prereqs
