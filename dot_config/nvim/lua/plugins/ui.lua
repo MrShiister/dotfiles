@@ -42,6 +42,16 @@ return {
   },
 
   {
+    "folke/snacks.nvim",
+    ---@type snacks.Config
+    opts = {
+      notifier = {
+        style = "minimal",
+      },
+    },
+  },
+
+  {
     "nvim-neo-tree/neo-tree.nvim",
     opts = {
       filesystem = {
@@ -76,5 +86,9 @@ return {
         position = "left", -- didn't work
       },
     },
+  },
+
+  {
+    "rcarriga/nvim-notify",
   },
 }
