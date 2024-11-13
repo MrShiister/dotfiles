@@ -15,14 +15,16 @@ return {
 
   {
     "neovim/nvim-lspconfig",
+    ---@class PluginLspOpts
     opts = {
-      ensure_installed = {
-        "esbonio",
-        "lua-language-server",
-        "shfmt",
-        "stylua",
-        "taplo",
+      ---@type lspconfig.options
+      servers = {
+        -- esbonio will be automatically installed with mason and loaded with lspconfig
+        esbonio = {},
       },
+      -- you can do any additional lsp server setup here
+      -- return true if you don't want this server to be setup with lspconfig
+      ---@type table<string, fun(server:string, opts:_.lspconfig.options):boolean?>
       setup = {
         -- Don't use nvim-lspconfig for rust as rustaceanvim is preferred
         rust_analyzer = function()
