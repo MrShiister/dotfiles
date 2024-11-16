@@ -19,8 +19,12 @@ return {
     opts = {
       ---@type lspconfig.options
       servers = {
-        -- esbonio will be automatically installed with mason and loaded with lspconfig
-        esbonio = {},
+        -- use esbonio for rst
+        -- esbonio = {},
+        -- use ts_ls for javascript and typescript
+        -- typescript-language-server = {},
+        -- use rust-analyzer for rust
+        -- rust-analyzer = {}
       },
       -- you can do any additional lsp server setup here
       -- return true if you don't want this server to be setup with lspconfig
