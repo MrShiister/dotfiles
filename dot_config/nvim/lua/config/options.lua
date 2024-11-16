@@ -24,10 +24,12 @@ end
 --     2. run on a new WSL shell:
 --          socat tcp-listen:8121,fork,bind=0.0.0.0 EXEC:'clip.exe'
 --
+-- TODO: don't set vim.g.clipboard when host machine is not using WSL.
 
 -- Always use clipboard
 vim.opt.clipboard = "unnamedplus"
 
+-- Check that the current machine is on WSL
 if vim.fn.has("wsl") == 1 then
   -- If you are in a devcontainer, access the clipboard by forwarding to localhost
   if vim.env.REMOTE_CONTAINERS then
