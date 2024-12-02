@@ -17,6 +17,11 @@ return {
   -- - Neotree <commit>
   {
     "sindrets/diffview.nvim",
+    -- stylua: ignore
+    keys = {
+      { "<leader>dvo", "<cmd>DiffviewOpen<cr>",  desc = "Open Diffview" },
+      { "<leader>dvc", "<cmd>DiffviewClose<cr>", desc = "Close Diffview" },
+    },
   },
   {
     "folke/flash.nvim",
