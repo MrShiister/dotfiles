@@ -1,0 +1,245 @@
+{
+    "$help": "https://aka.ms/terminal-documentation",
+    "$schema": "https://aka.ms/terminal-profiles-schema",
+    "actions": 
+    [
+        {
+            "command": 
+            {
+                "action": "copy",
+                "singleLine": false
+            },
+            "id": "User.copy.644BA8F2"
+        },
+        {
+            "command": "unbound",
+            "keys": "ctrl+v"
+        },
+        {
+            "command": "unbound",
+            "keys": "ctrl+c"
+        },
+        {
+            "command": "unbound",
+            "keys": "f11"
+        },
+        {
+            "command": "paste",
+            "id": "User.paste"
+        },
+        {
+            "command": "find",
+            "id": "User.find",
+            "keys": "ctrl+shift+f"
+        },
+        {
+            "command": 
+            {
+                "action": "splitPane",
+                "split": "auto",
+                "splitMode": "duplicate"
+            },
+            "id": "User.splitPane.A6751878",
+            "keys": "alt+shift+d"
+        }
+    ],
+    "copyFormatting": "none",
+    "copyOnSelect": false,
+    "defaultProfile": "{51855cb2-8cce-5362-8f54-464b92b32386}",
+    "newTabMenu": 
+    [
+        {
+            "type": "remainingProfiles"
+        }
+    ],
+    "profiles": 
+    {
+        "defaults": 
+        {
+            "closeOnExit": "graceful",
+            "colorScheme": "DimmedMonokai",
+            "font": 
+            {
+                "face": "MesloLGS Nerd Font",
+                "size": 11
+            },
+            "intenseTextStyle": "bold",
+            "padding": "8"
+        },
+        "list": 
+        [
+            {
+                "commandline": "%SystemRoot%\\System32\\WindowsPowerShell\\v1.0\\powershell.exe",
+                "guid": "{61c54bbd-c2c6-5271-96e7-009a87ff44bf}",
+                "hidden": false,
+                "name": "Windows PowerShell"
+            },
+            {
+                "commandline": "%SystemRoot%\\System32\\cmd.exe",
+                "guid": "{0caa0dad-35be-5f56-a8ff-afceeeaa6101}",
+                "hidden": false,
+                "name": "Command Prompt"
+            },
+            {
+                "guid": "{2c4de342-38b7-51cf-b940-2309a097f518}",
+                "hidden": true,
+                "name": "Ubuntu",
+                "source": "Windows.Terminal.Wsl"
+            },
+            {
+                "guid": "{b453ae62-4e3d-5e58-b989-0a998ec441b8}",
+                "hidden": false,
+                "name": "Azure Cloud Shell",
+                "source": "Windows.Terminal.Azure"
+            },
+            {
+                "guid": "{51855cb2-8cce-5362-8f54-464b92b32386}",
+                "hidden": false,
+                "name": "Ubuntu",
+                "source": "CanonicalGroupLimited.Ubuntu_79rhkp1fndgsc"
+            }
+        ]
+    },
+    "schemes": 
+    [
+        {
+            "background": "#2A1F1D",
+            "black": "#573D26",
+            "blue": "#5A86AD",
+            "brightBlack": "#9B6C4A",
+            "brightBlue": "#B8D3ED",
+            "brightCyan": "#93CFD7",
+            "brightGreen": "#95D8BA",
+            "brightPurple": "#D19ECB",
+            "brightRed": "#E84627",
+            "brightWhite": "#FFF9D5",
+            "brightYellow": "#D0D150",
+            "cursorColor": "#573D26",
+            "cyan": "#74A6AD",
+            "foreground": "#E0DBB7",
+            "green": "#6BA18A",
+            "name": "BirdsOfParadise",
+            "purple": "#AC80A6",
+            "red": "#BE2D26",
+            "selectionBackground": "#563C27",
+            "white": "#E0DBB7",
+            "yellow": "#E99D2A"
+        },
+        {
+            "background": "#101116",
+            "black": "#101116",
+            "blue": "#00B0FF",
+            "brightBlack": "#686868",
+            "brightBlue": "#6871FF",
+            "brightCyan": "#60FDFF",
+            "brightGreen": "#5FFA68",
+            "brightPurple": "#D682EC",
+            "brightRed": "#FF6E67",
+            "brightWhite": "#FFFFFF",
+            "brightYellow": "#FFFC67",
+            "cursorColor": "#76FF9F",
+            "cyan": "#76C1FF",
+            "foreground": "#00A2FF",
+            "green": "#00FF9C",
+            "name": "Blue Matrix",
+            "purple": "#D57BFF",
+            "red": "#FF5680",
+            "selectionBackground": "#C1DEFF",
+            "white": "#C7C7C7",
+            "yellow": "#FFFC58"
+        },
+        {
+            "background": "#282C34",
+            "black": "#41444D",
+            "blue": "#3476FF",
+            "brightBlack": "#8F9AAE",
+            "brightBlue": "#10B1FE",
+            "brightCyan": "#5FB9BC",
+            "brightGreen": "#3FC56B",
+            "brightPurple": "#FF78F8",
+            "brightRed": "#FF6480",
+            "brightWhite": "#FFFFFF",
+            "brightYellow": "#F9C859",
+            "cursorColor": "#FFCC00",
+            "cyan": "#4483AA",
+            "foreground": "#B9C0CB",
+            "green": "#25A45C",
+            "name": "BlulocoDark",
+            "purple": "#7A82DA",
+            "red": "#FC2F52",
+            "selectionBackground": "#B9C0CA",
+            "white": "#CDD4E0",
+            "yellow": "#FF936A"
+        },
+        {
+            "background": "#1F1F1F",
+            "black": "#3A3D43",
+            "blue": "#4F76A1",
+            "brightBlack": "#888987",
+            "brightBlue": "#186DE3",
+            "brightCyan": "#2E706D",
+            "brightGreen": "#0F722F",
+            "brightPurple": "#FB0067",
+            "brightRed": "#FB001F",
+            "brightWhite": "#FDFFB9",
+            "brightYellow": "#C47033",
+            "cursorColor": "#F83E19",
+            "cyan": "#578FA4",
+            "foreground": "#B9BCBA",
+            "green": "#879A3B",
+            "name": "DimmedMonokai",
+            "purple": "#855C8D",
+            "red": "#BE3F48",
+            "selectionBackground": "#2A2D32",
+            "white": "#B9BCBA",
+            "yellow": "#C5A635"
+        },
+        {
+            "background": "#071317",
+            "black": "#223344",
+            "blue": "#2255CC",
+            "brightBlack": "#556677",
+            "brightBlue": "#3377FF",
+            "brightCyan": "#33DDFF",
+            "brightGreen": "#33FF11",
+            "brightPurple": "#AA77FF",
+            "brightRed": "#FF1133",
+            "brightWhite": "#BBCCDD",
+            "brightYellow": "#FFDD33",
+            "cursorColor": "#DDEEFF",
+            "cyan": "#22BBDD",
+            "foreground": "#DDEEFF",
+            "green": "#33AA11",
+            "name": "Galizur",
+            "purple": "#7755AA",
+            "red": "#AA1122",
+            "selectionBackground": "#071317",
+            "white": "#8899AA",
+            "yellow": "#CCAA22"
+        },
+        {
+            "background": "#141414",
+            "black": "#141414",
+            "blue": "#44474A",
+            "brightBlack": "#262626",
+            "brightBlue": "#5A5E62",
+            "brightCyan": "#8A989B",
+            "brightGreen": "#CCD88C",
+            "brightPurple": "#D0DC8E",
+            "brightRed": "#DE7C4C",
+            "brightWhite": "#FFFFD4",
+            "brightYellow": "#E2C47E",
+            "cursorColor": "#FFFFFF",
+            "cyan": "#778385",
+            "foreground": "#FFFFD4",
+            "green": "#AFB97A",
+            "name": "Twilight",
+            "purple": "#B4BE7C",
+            "red": "#C06D44",
+            "selectionBackground": "#313131",
+            "white": "#FFFFD4",
+            "yellow": "#C2A86C"
+        }
+    ],
+    "themes": []
+}
