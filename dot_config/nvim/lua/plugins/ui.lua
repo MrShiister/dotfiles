@@ -23,6 +23,7 @@ return {
       { "<leader>dvc", "<cmd>DiffviewClose<cr>", desc = "Close Diffview" },
     },
   },
+
   {
     "folke/flash.nvim",
     event = "VeryLazy",
@@ -67,21 +68,21 @@ return {
     },
   },
 
-  {
-    "nvim-telescope/telescope.nvim",
-    opts = {
-      pickers = {
-        grep_string = {
-          additional_args = { "--hidden", "--glob", "!.git" },
-        },
-        live_grep = {
-          additional_args = { "--hidden", "--glob", "!.git" },
-        },
-        -- Press Alt-i inside Telescope for no_ignore
-        -- https://www.lazyvim.org/extras/editor/telescope#telescopenvim
-      },
-    },
-  },
+  -- {
+  --   "nvim-telescope/telescope.nvim",
+  --   opts = {
+  --     pickers = {
+  --       grep_string = {
+  --         additional_args = { "--hidden", "--glob", "!.git" },
+  --       },
+  --       live_grep = {
+  --         additional_args = { "--hidden", "--glob", "!.git" },
+  --       },
+  --       -- Press Alt-i inside Telescope for no_ignore
+  --       -- https://www.lazyvim.org/extras/editor/telescope#telescopenvim
+  --     },
+  --   },
+  -- },
 
   {
     "folke/trouble.nvim",
@@ -98,4 +99,31 @@ return {
   {
     "rcarriga/nvim-notify",
   },
+
+  {
+    'MeanderingProgrammer/render-markdown.nvim',
+    dependencies = { 'nvim-treesitter/nvim-treesitter', 'echasnovski/mini.nvim' }, -- if you use the mini.nvim suite
+    -- dependencies = { 'nvim-treesitter/nvim-treesitter', 'echasnovski/mini.icons' }, -- if you use standalone mini plugins
+    -- dependencies = { 'nvim-treesitter/nvim-treesitter', 'nvim-tree/nvim-web-devicons' }, -- if you prefer nvim-web-devicons
+    ---@module 'render-markdown'
+    ---@type render.md.UserConfig
+    opts = {},
+  },
+
+  { "junegunn/fzf", build = "./install --bin" },
+
+  {
+    "ibhagwan/fzf-lua",
+    opts = function()
+      local config = require("fzf-lua.config")
+      config.defaults.keymap.fzf["ctrl-b"] = "half-page-up"
+      config.defaults.keymap.fzf["ctrl-f"] = "half-page-down"
+      config.defaults.keymap.fzf["ctrl-d"] = "preview-page-down"
+      config.defaults.keymap.fzf["ctrl-u"] = "preview-page-up"
+      config.defaults.keymap.builtin["<c-d>"] = "preview-page-down"
+      config.defaults.keymap.builtin["<c-u>"] = "preview-page-up"
+      config.defaults.keymap.builtin["<c-f>"] = false
+      config.defaults.keymap.builtin["<c-b>"] = false
+    end
+  }
 }
