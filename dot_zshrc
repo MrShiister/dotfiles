@@ -5,6 +5,8 @@ export EDITOR=nvim
 
 alias n="nvim ."
 alias updatestartuptty='echo "UPDATESTARTUPTTY" | gpg-connect-agent'
+alias clipboard-listener="socat tcp-listen:8121,fork,bind=0.0.0.0 EXEC:'clip.exe'"
+alias wayland-fix='ln -s /mnt/wslg/runtime-dir/wayland-0* /run/user/1000'
 
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
