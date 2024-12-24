@@ -14,24 +14,37 @@ return {
   },
 
   {
+    "williamboman/mason.nvim",
+    opts = {
+      ensure_installed = {
+        "esbonio",
+        "typescript-language-server",
+        "rust-analyzer",
+        "docker-compose-language-service",
+        "dockerfile-language-server",
+      },
+    },
+  },
+
+  {
     "neovim/nvim-lspconfig",
     ---@class PluginLspOpts
     opts = {
       ---@type lspconfig.options
-      servers = {
-        -- rst
-        esbonio = {},
-
-        -- javascript, typescript
-        ts_ls = {},
-
-        -- rust
-        rust_analyzer = {},
-
-        -- docker
-        dockerls = {},
-        docker_compose_language_service = {},
-      },
+      -- servers = {
+      --   -- rst
+      --   esbonio = {},
+      --
+      --   -- javascript, typescript
+      --   ts_ls = {},
+      --
+      --   -- rust
+      --   rust_analyzer = {},
+      --
+      --   -- docker
+      --   dockerls = {},
+      --   docker_compose_language_service = {},
+      -- },
       ---@type lspconfig.options
       -- you can do any additional lsp server setup here
       -- return true if you don't want this server to be setup with lspconfig
