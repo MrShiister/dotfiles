@@ -19,13 +19,20 @@ return {
     opts = {
       ---@type lspconfig.options
       servers = {
-        -- use esbonio for rst
-        -- esbonio = {},
-        -- use ts_ls for javascript and typescript
-        -- typescript-language-server = {},
-        -- use rust-analyzer for rust
-        -- rust-analyzer = {}
+        -- rst
+        esbonio = {},
+
+        -- javascript, typescript
+        ts_ls = {},
+
+        -- rust
+        rust_analyzer = {},
+
+        -- docker
+        dockerls = {},
+        docker_compose_language_service = {},
       },
+      ---@type lspconfig.options
       -- you can do any additional lsp server setup here
       -- return true if you don't want this server to be setup with lspconfig
       ---@type table<string, fun(server:string, opts:_.lspconfig.options):boolean?>
