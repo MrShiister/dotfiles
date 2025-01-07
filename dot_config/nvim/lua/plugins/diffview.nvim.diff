@@ -1,0 +1,13 @@
+diff --git a/lua/diffview/vcs/adapters/git/init.lua b/lua/diffview/vcs/adapters/git/init.lua
+index 3a137bc..6f98e3b 100644
+--- a/lua/diffview/vcs/adapters/git/init.lua
++++ b/lua/diffview/vcs/adapters/git/init.lua
+@@ -325,7 +325,7 @@ function GitAdapter:get_merge_context()
+     rev_names = out[2],
+   }
+ 
+-  out, code = self:exec_sync({ "merge-base", "HEAD", their_head }, self.ctx.toplevel)
++  out, code = self:exec_sync({ "merge-base", "HEAD", their_head, "--independent" }, self.ctx.toplevel)
+   assert(code == 0)
+ 
+   ret.base = {

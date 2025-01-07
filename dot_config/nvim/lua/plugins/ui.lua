@@ -15,6 +15,9 @@ return {
   -- To see branch diffs without diffview,
   -- - Gitsigns change_base <commit>
   -- - Neotree <commit>
+  --
+  -- DiffviewOpen crashed on merge state between two repos of unrelated histories.
+  -- Apply diffview.nvim.diff for workaround.
   {
     "sindrets/diffview.nvim",
     -- stylua: ignore
