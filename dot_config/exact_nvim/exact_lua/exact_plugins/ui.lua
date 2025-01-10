@@ -22,9 +22,18 @@ return {
     "sindrets/diffview.nvim",
     -- stylua: ignore
     keys = {
-      { "<leader>dvo", "<cmd>DiffviewOpen<cr>",  desc = "Open Diffview" },
-      { "<leader>dvc", "<cmd>DiffviewClose<cr>", desc = "Close Diffview" },
+      { "<leader>dvo", "<cmd>DiffviewOpen<cr>",          desc = "Open Diffview" },
+      { "<leader>dvc", "<cmd>DiffviewClose<cr>",         desc = "Close Diffview" },
       { "<leader>dvf", "<cmd>DiffviewFileHistory %<cr>", desc = "Open Diffview of this file's history" },
+      {
+        "<leader>dvv",
+        function()
+          vim.ui.input({ prompt = "Ref to Diffview: "}, function(msg)
+            require("diffview").open(msg)
+          end)
+        end,
+        desc = "Open Diffview to <ref>"
+      }
     },
   },
 
