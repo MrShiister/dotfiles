@@ -1,0 +1,35 @@
+# Config relating to the Lazygit UI
+gui:
+  # If true, increase the height of the focused side window; creating an accordion effect
+  expandFocusedSidePanel: true
+
+  # Whether to show the divergence from the base branch in the branches view.
+  # One of: 'none' | 'onlyArrow'  | 'arrowAndNumber'
+  showDivergenceFromBaseBranch: 'arrowAndNumber'
+
+  # How things are filtered when typing '/'.
+  # One of 'substring' (default) | 'fuzzy'
+  filterMode: 'fuzzy'
+
+  # Nerd fonts version to use.
+  # One of: '2' | '3' | empty string (default)
+  # If empty, do not show icons.
+  nerdFontsVersion: '3'
+
+# Config relating to git
+git:
+  # If true, lazygit will automatically stage files that used to have merge
+  # conflicts but no longer do; and it will also ask you if you want to
+  # continue a merge or rebase if you've resolved all conflicts. If false, it
+  # won't do either of these things.
+  autoStageResolvedConflicts: false
+
+# If true, don't display introductory popups upon opening Lazygit.
+disableStartupPopups: false
+
+# What to do when opening Lazygit outside of a git repo.
+# - 'prompt': (default) ask whether to initialize a new repo or open in the most recent repo
+# - 'create': initialize a new repo
+# - 'skip': open most recent repo
+# - 'quit': exit Lazygit
+notARepository: 'skip'
