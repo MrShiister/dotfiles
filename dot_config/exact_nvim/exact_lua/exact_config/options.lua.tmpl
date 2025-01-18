@@ -10,6 +10,19 @@ local function paste()
   }
 end
 
+-- Always use clipboard
+vim.opt.clipboard = "unnamedplus"
+
+{{- /* Add the configuration when the system is either WSL or an Azure VM */}}
+{{ if and
+  (eq .chezmoi.os "linux")
+  (or
+    (.chezmoi.kernel.osrelease | lower | contains "microsoft")
+    (.chezmoi.kernel.osrelease | lower | contains "azure")
+  )
+}}
+-- The following configuration is needed when the host system is WSL.
+--
 -- This section provides clipboard access through WSL/remote VMs in and outside of containers
 -- Assumes WSL is your local environment, and devpod with ssh provider for remote devcontainer.
 --
@@ -24,11 +37,6 @@ end
 --     2. run on a new WSL shell:
 --          socat tcp-listen:8121,fork,bind=0.0.0.0 EXEC:'clip.exe'
 --
--- TODO: don't set vim.g.clipboard when host machine is not using WSL.
-
--- Always use clipboard
-vim.opt.clipboard = "unnamedplus"
-
 -- Check that the current machine is on WSL
 if vim.fn.has("wsl") == 1 then
   -- If you are in a devcontainer, access the clipboard by forwarding to localhost
@@ -75,3 +83,4 @@ else
     cache_enabled = 0,
   }
 end
+{{ end -}}
