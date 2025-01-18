@@ -2,14 +2,6 @@
 -- Default options that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/options.lua
 -- Add any additional options here
 
--- Revert the paste functionality to the original
-local function paste()
-  return {
-    vim.fn.split(vim.fn.getreg(""), "\n"),
-    vim.fn.getregtype(""),
-  }
-end
-
 -- Always use clipboard
 vim.opt.clipboard = "unnamedplus"
 
@@ -36,7 +28,15 @@ vim.opt.clipboard = "unnamedplus"
 --     1. add `RemoteForward 8121 localhost:8121` in `.ssh/config` to your remote machine or container
 --     2. run on a new WSL shell:
 --          socat tcp-listen:8121,fork,bind=0.0.0.0 EXEC:'clip.exe'
---
+
+-- Revert the paste functionality to the original
+local function paste()
+  return {
+    vim.fn.split(vim.fn.getreg(""), "\n"),
+    vim.fn.getregtype(""),
+  }
+end
+
 -- Check that the current machine is on WSL
 if vim.fn.has("wsl") == 1 then
   -- If you are in a devcontainer, access the clipboard by forwarding to localhost
