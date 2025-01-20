@@ -28,7 +28,7 @@ return {
       {
         "<leader>dvv",
         function()
-          vim.ui.input({ prompt = "Ref to Diffview: "}, function(msg)
+          vim.ui.input({ prompt = "Ref to Diffview: " }, function(msg)
             require("diffview").open(msg)
           end)
         end,
@@ -123,7 +123,7 @@ return {
     opts = {},
   },
 
-  { "junegunn/fzf", build = "./install --bin" },
+  { "junegunn/fzf", build = "./install --all" },
 
   {
     "ibhagwan/fzf-lua",
