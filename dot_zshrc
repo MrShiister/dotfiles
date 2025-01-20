@@ -108,8 +108,6 @@ COMPLETION_WAITING_DOTS="true"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
 	zsh-vi-mode
-	vscode
-	zsh-interactive-cd
 	zsh-autosuggestions
 	z
 )
@@ -148,6 +146,7 @@ ZVM_LINE_INIT_MODE=$ZVM_MODE_INSERT
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+# Let fzf completions overwrite zsh-vi-mode completions (https://github.com/jeffreytse/zsh-vi-mode#execute-extra-commands)
+zvm_after_init_commands+=('[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh')
 
 [[ ! -f $ZSH/custom/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ]] || source $ZSH/custom/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
