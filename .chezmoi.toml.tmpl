@@ -1,13 +1,16 @@
 {{- $is_devcontainer:= or ( env "CODESPACES" ) ( env "REMOTE_CONTAINERS" ) | not | not -}}
 {{- $is_root:= eq .chezmoi.uid "0" -}}
-{{/* This section sets the options for devcontainers. */}}
+
+{{- /* Set default options. */ -}}
 {{- $get_gh := false -}}
 {{- $get_devpod := false -}}
-{{/* End of section */}}
-{{- if not $is_devcontainer -}}
+
+{{- /* Prompt options on supported machines. */ -}}
+{{- if and (not $is_devcontainer) (eq .chezmoi.os "linux") (eq .chezmoi.osRelease.id "ubuntu" "debian") -}}
 {{-   $get_gh = promptBool "Install gh cli" true -}}
 {{-   $get_devpod = promptBool "Install devpod cli" true -}}
 {{- end -}}
+
 {{- if $is_devcontainer -}}
 sourceDir = "~/dotfiles"
 
