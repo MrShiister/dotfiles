@@ -32,9 +32,10 @@ curl -L -o devpod "https://github.com/loft-sh/devpod/releases/latest/download/de
 
 # Install nvim
 echo "Installing nvim latest"
-curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim-linux64.tar.gz
-{{ .sudo }}tar -C /usr/local/ -xzf nvim-linux64.tar.gz --strip-components=1
-rm nvim-linux64.tar.gz
+nvimtar=nvim-linux-x86_64.tar.gz
+curl -LO https://github.com/neovim/neovim/releases/latest/download/${nvimtar}
+{{ .sudo }}tar -C /usr/local/ -xzf ${nvimtar} --strip-components=1
+rm ${nvimtar}
 
 # Install lazygit
 echo "Installing lazygit"
