@@ -11,6 +11,11 @@ return {
       { "<S-F11>", function() require("dap").step_out() end, desc = "Step Out" },
       { "<F10>", function() require("dap").step_over() end, desc = "Step Over" },
     },
+
+    opts = function()
+      local dap = require("dap")
+      dap.defaults.fallback.exception_breakpoints = { "rust_panic" }
+    end,
   },
 
   {
