@@ -148,7 +148,7 @@ alias wayland-fix='ln -s /mnt/wslg/runtime-dir/wayland-0* /run/user/1000'
 
 # FZF options
 # Let fzf completions overwrite zsh-vi-mode completions (https://github.com/jeffreytse/zsh-vi-mode#execute-extra-commands)
-zvm_after_init_commands+=('[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh')
+zvm_after_init_commands+=('[ -f /usr/local/bin/fzf ] && source <(/usr/local/bin/fzf --zsh')
 export FZF_DEFAULT_OPTS='--tmux'
 export FZF_COMPLETION_DIR_OPTS='--walker dir,follow,hidden'
 

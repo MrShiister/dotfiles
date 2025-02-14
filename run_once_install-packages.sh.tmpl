@@ -4,7 +4,7 @@
 
 # Add chezmoi completions
 mkdir -p $HOME/.oh-my-zsh/completions/
-chezmoi completion zsh > $HOME/.oh-my-zsh/completions/_chezmoi
+$HOME/.local/bin/chezmoi completion zsh > $HOME/.oh-my-zsh/completions/_chezmoi
 
 packages="tmux fd-find ripgrep"
 {{      if not .is_devcontainer -}}
