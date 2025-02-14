@@ -81,22 +81,6 @@ return {
     },
   },
 
-  -- {
-  --   "nvim-telescope/telescope.nvim",
-  --   opts = {
-  --     pickers = {
-  --       grep_string = {
-  --         additional_args = { "--hidden", "--glob", "!.git" },
-  --       },
-  --       live_grep = {
-  --         additional_args = { "--hidden", "--glob", "!.git" },
-  --       },
-  --       -- Press Alt-i inside Telescope for no_ignore
-  --       -- https://www.lazyvim.org/extras/editor/telescope#telescopenvim
-  --     },
-  --   },
-  -- },
-
   {
     "folke/trouble.nvim",
     opts = {
@@ -122,8 +106,6 @@ return {
     ---@type render.md.UserConfig
     opts = {},
   },
-
-  { "junegunn/fzf", build = "./install --all" },
 
   {
     "ibhagwan/fzf-lua",

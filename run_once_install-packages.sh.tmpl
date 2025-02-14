@@ -27,24 +27,37 @@ echo "Installing ${packages}"
 {{ .sudo }}apt install -y ${packages}
 
 {{      if .get_devpod -}}
-curl -L -o devpod "https://github.com/loft-sh/devpod/releases/latest/download/devpod-linux-amd64" && sudo install -c -m 0755 devpod /usr/local/bin && rm -f devpod
+curl -L -o devpod "https://github.com/loft-sh/devpod/releases/latest/download/devpod-linux-amd64" && \
+{{ .sudo }}install -c -m 0755 devpod /usr/local/bin && \
+rm -f devpod
 {{-     end }}
 
 # Install nvim
 echo "Installing nvim latest"
-nvimtar=nvim-linux-x86_64.tar.gz
-curl -LO https://github.com/neovim/neovim/releases/latest/download/${nvimtar}
-{{ .sudo }}tar -C /usr/local/ -xzf ${nvimtar} --strip-components=1
-rm ${nvimtar}
+NVIM_TAR=nvim-linux-x86_64.tar.gz
+curl -LO https://github.com/neovim/neovim/releases/latest/download/${NVIM_TAR}
+{{ .sudo }}tar -C /usr/local/ -xzf ${NVIM_TAR} --strip-components=1
+rm ${NVIM_TAR}
 
 # Install lazygit
 echo "Installing lazygit"
 LAZYGIT_VERSION=$(curl -s "https://api.github.com/repos/jesseduffield/lazygit/releases/latest" | grep -Po '"tag_name": "v\K[^"]*')
 echo "Lazygit version $LAZYGIT_VERSION"
-curl -Lo lazygit.tar.gz "https://github.com/jesseduffield/lazygit/releases/latest/download/lazygit_${LAZYGIT_VERSION}_Linux_x86_64.tar.gz"
-tar xf lazygit.tar.gz lazygit
+LAZYGIT_TAR="lazygit_${LAZYGIT_VERSION}_Linux_x86_64.tar.gz"
+curl -LO "https://github.com/jesseduffield/lazygit/releases/latest/download/$LAZYGIT_TAR"
+tar xf ${LAZYGIT_TAR} lazygit
 {{ .sudo }}install lazygit /usr/local/bin
-rm -r lazygit lazygit.tar.gz
+rm -r lazygit ${LAZYGIT_TAR}
+
+# Install fzf
+echo "Installing fzf"
+FZF_VERSION=$(curl -s "https://api.github.com/repos/junegunn/fzf/releases/latest" | grep -Po '"tag_name": "v\K[^"]*')
+echo "fzf version $FZF_VERSION"
+FZF_TAR=fzf-$FZF_VERSION-linux_amd64.tar.gz
+curl -LO "https://github.com/junegunn/fzf/releases/download/v$FZF_VERSION/$FZF_TAR"
+tar xf $FZF_TAR
+{{ .sudo }}install fzf /usr/local/bin
+rm -r $FZF_TAR fzf
 
 {{      if .is_devcontainer -}}
 git config --global commit.gpgsign true
