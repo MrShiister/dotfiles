@@ -14,7 +14,7 @@ return {
 
     opts = function()
       local dap = require("dap")
-      dap.defaults.fallback.exception_breakpoints = { "rust_panic" }
+      dap.defaults.codelldb.exception_breakpoints = { "rust_panic" }
     end,
   },
 
