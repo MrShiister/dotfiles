@@ -12,7 +12,7 @@ chezmoi:template:missing-key=zero
 	helper = !gh auth git-credential
 [credential "https://gist.github.com"]
 	helper = !gh auth git-credential
-{{- if eq .chezmoi.os "windows" -}}
+{{- if eq .chezmoi.os "windows" }}
 [gpg]
-  program = "c:/Program Files (x86)/GnuPG/bin/gpg.exe"
+	program = c:/Program Files (x86)/GnuPG/bin/gpg.exe
 {{- end }}
