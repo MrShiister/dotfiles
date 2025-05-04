@@ -137,7 +137,7 @@ export EDITOR=nvim
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 #
 alias n="nvim ."
-alias t="tmux new-session -As0"
+alias t="tmux -u new-session -As0"
 alias updatestartuptty='echo "UPDATESTARTUPTTY" | gpg-connect-agent'
 alias clipboard-listener="socat tcp-listen:8121,fork,bind=0.0.0.0 EXEC:'clip.exe'"
 alias wayland-fix='ln -s /mnt/wslg/runtime-dir/wayland-0* /run/user/1000'
