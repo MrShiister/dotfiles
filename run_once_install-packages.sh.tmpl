@@ -48,6 +48,8 @@ rm -f devpod
 echo "Installing nvim latest"
 NVIM_TAR=nvim-linux-x86_64.tar.gz
 curl -LO https://github.com/neovim/neovim/releases/latest/download/${NVIM_TAR}
+# Use the following binary for compatibility with older GLIBC versions
+# curl -LO https://github.com/neovim/neovim-releases/releases/download/v0.11.1/nvim-linux-x86_64.tar.gz
 {{ .sudo }}tar -C /usr/local/ -xzf ${NVIM_TAR} --strip-components=1
 rm ${NVIM_TAR}
 
