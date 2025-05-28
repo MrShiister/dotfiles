@@ -46,9 +46,9 @@ rm -f devpod
 
 # Install nvim
 NVIM_TAR=nvim-linux-x86_64.tar.gz
-{{      if and (eq .chezmoi.osRelease.id "debian") (lt .chezmoi.osRelease.versionID 12) -}}
+{{      if and (eq .chezmoi.osRelease.id "debian") (lt (.chezmoi.osRelease.versionID | atoi) 12) -}}
 # Use the following binary for compatibility with older GLIBC versions
-echo "Debian <12 detected. Installing unsupported nvim with older glibc"
+echo "Debian older than 12 detected. Installing unsupported nvim with older glibc"
 curl -LO https://github.com/neovim/neovim-releases/releases/latest/download/${NVIM_TAR}
 {{-     else -}}
 echo "Installing nvim latest"
