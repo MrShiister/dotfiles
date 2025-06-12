@@ -49,6 +49,16 @@ return {
       --   -- docker
       --   dockerls = {},
       --   docker_compose_language_service = {},
+      --
+      --   -- ltex-ls-plus
+      --   ["ltex_plus"] = {
+      --     settings = {
+      --       ltex = {
+      --         language = "en-GB",
+      --         enabled = { "restructuredtext" },
+      --       },
+      --     },
+      --   },
       -- },
       ---@type lspconfig.options
       -- you can do any additional lsp server setup here
