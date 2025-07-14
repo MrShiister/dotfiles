@@ -41,7 +41,6 @@ return {
     "neovim/nvim-lspconfig",
     ---@class PluginLspOpts
     opts = {
-      ---@type lspconfig.options
       -- servers = {
       --   -- rst
       --   esbonio = {},
@@ -66,7 +65,7 @@ return {
       --     },
       --   },
       -- },
-      ---@type lspconfig.options
+
       -- you can do any additional lsp server setup here
       -- return true if you don't want this server to be setup with lspconfig
       ---@type table<string, fun(server:string, opts:_.lspconfig.options):boolean?>
@@ -81,6 +80,7 @@ return {
 
   {
     "mrcjkb/rustaceanvim",
+    ---@class PluginLspOpts
     opts = {
       server = {
         default_settings = {

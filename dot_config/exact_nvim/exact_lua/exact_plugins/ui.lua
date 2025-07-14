@@ -28,11 +28,17 @@ return {
       {
         "<leader>dvv",
         function()
-          vim.ui.input({ prompt = "Ref to Diffview: " }, function(msg)
-            require("diffview").open(msg)
+          vim.ui.input({ prompt = "Arguments to Diffview: " }, function(input)
+            local args = {}
+            local i = 1
+            for token in input.gmatch(input, "[%S]+") do
+              args[i] = token
+              i = i + 1
+            end
+            require("diffview").open(args)
           end)
         end,
-        desc = "Open Diffview to <ref>"
+        desc = "Open Diffview with arguments"
       }
     },
   },
@@ -40,16 +46,20 @@ return {
   {
     "folke/flash.nvim",
     event = "VeryLazy",
+    vscode = false,
     ---@type Flash.Config
     opts = {
       labels = "aoeuhtnspyfgcrlqjkxbmwvz",
     },
     -- stylua: ignore
     keys = {
-      { "s",  mode = { "n", "x", "o" }, false },
-      { "S",  mode = { "n", "x", "o" }, false },
-      { "gs", mode = { "n", "x", "o" }, function() require("flash").jump() end,       desc = "Flash" },
-      { "gS", mode = { "n", "x", "o" }, function() require("flash").treesitter() end, desc = "Flash Treesitter" },
+      { "s",     mode = { "n", "x", "o" }, false },
+      { "S",     mode = { "n", "x", "o" }, false },
+      { "gs",    mode = { "n", "x", "o" }, function() require("flash").jump() end,              desc = "Flash" },
+      { "gS",    mode = { "n", "x", "o" }, function() require("flash").treesitter() end,        desc = "Flash Treesitter" },
+      { "r",     mode = "o",               function() require("flash").remote() end,            desc = "Remote Flash" },
+      { "R",     mode = { "o", "x" },      function() require("flash").treesitter_search() end, desc = "Treesitter Search" },
+      { "<c-s>", mode = { "c" },           function() require("flash").toggle() end,            desc = "Toggle Flash Search" },
     },
   },
 
@@ -62,6 +72,7 @@ return {
 
   {
     "folke/snacks.nvim",
+    ---@module "snacks"
     ---@type snacks.Config
     opts = {
       notifier = {
@@ -72,6 +83,9 @@ return {
 
   {
     "nvim-neo-tree/neo-tree.nvim",
+    lazy = false,
+    ---@module "neo-tree"
+    ---@type neotree.Config?
     opts = {
       filesystem = {
         filtered_items = {
