@@ -5,11 +5,11 @@ return {
 
     -- stylua: ignore
     keys = {
-      { "<F9>", function() require("dap").toggle_breakpoint() end, desc = "Toggle Breakpoint" },
-      { "<F5>", function() require("dap").continue() end, desc = "Continue" },
-      { "<F11>", function() require("dap").step_into() end, desc = "Step Into" },
-      { "<S-F11>", function() require("dap").step_out() end, desc = "Step Out" },
-      { "<F10>", function() require("dap").step_over() end, desc = "Step Over" },
+      { "<F9>",    function() require("dap").toggle_breakpoint() end, desc = "Toggle Breakpoint" },
+      { "<F5>",    function() require("dap").continue() end,          desc = "Continue" },
+      { "<F11>",   function() require("dap").step_into() end,         desc = "Step Into" },
+      { "<S-F11>", function() require("dap").step_out() end,          desc = "Step Out" },
+      { "<F10>",   function() require("dap").step_over() end,         desc = "Step Over" },
     },
 
     opts = function()
@@ -22,11 +22,17 @@ return {
     "williamboman/mason.nvim",
     opts = {
       ensure_installed = {
-        "esbonio",
-        "typescript-language-server",
-        "rust-analyzer",
+        "bash-debug-adapter",
+        "bash-language-server",
+        "clang-format",
+        "clangd",
+        "cpptools",
         "docker-compose-language-service",
         "dockerfile-language-server",
+        "esbonio",
+        "groovy-language-server",
+        "rust-analyzer",
+        "typescript-language-server",
       },
     },
   },

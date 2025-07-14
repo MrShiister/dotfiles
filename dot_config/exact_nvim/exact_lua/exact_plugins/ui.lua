@@ -113,13 +113,16 @@ return {
   },
 
   {
+    "nvim-treesitter/nvim-treesitter",
+    dependencies = { "OXY2DEV/markview.nvim" },
+    lazy = false,
+  },
+
+  {
     "OXY2DEV/markview.nvim",
     lazy = false,
-
-    -- For blink.cmp's completion
-    -- source
-    -- dependencies = {
-    --     "saghen/blink.cmp"
-    -- },
+    -- load after nvim-treesitter
+    -- https://github.com/OXY2DEV/markview.nvim/issues/365#issuecomment-3028249737
+    priority = 49,
   },
 }
