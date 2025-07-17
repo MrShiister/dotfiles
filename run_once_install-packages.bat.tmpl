@@ -7,7 +7,7 @@
     echo.
     echo Symlink the configurations to %APPDATA%
     echo.
-    echo New-Item -Path $env:LOCALAPPDATA\nvim -ItemType SymbolicLink -Value $env:HOME\.config\nvim\
-    echo New-Item -Path $env:LOCALAPPDATA\lazygit -ItemType SymbolicLink -Value $env:HOME\.config\lazygit\
+    echo New-Item -Path $env:LOCALAPPDATA\nvim -ItemType SymbolicLink -Value $env:HOMEDRIVE$env:HOMEPATH\.config\nvim\
+    echo New-Item -Path $env:LOCALAPPDATA\lazygit -ItemType SymbolicLink -Value $env:HOMEDRIVE$env:HOMEPATH\.config\lazygit\
 )
 {{- end -}}
