@@ -143,6 +143,15 @@ alias updatestartuptty='echo "UPDATESTARTUPTTY" | gpg-connect-agent'
 alias clipboard-listener="socat tcp-listen:8121,fork,bind=0.0.0.0 EXEC:'clip.exe'"
 alias wayland-fix='ln -s /mnt/wslg/runtime-dir/wayland-0* /run/user/1000'
 
+# Hook ssh to set tmux window title to hostname
+ssh() {
+    tmux rename-window "$*"
+    command ssh "$@"
+    _exitcode=$?
+    tmux rename-window "$(hostname -s)"
+    return _exitcode
+}
+
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
