@@ -8,11 +8,13 @@ chezmoi:template:missing-key=zero
 	gpgsign = true
 [core]
 	editor = nvim
+{{- if not .is_devcontainer }}
 [credential "https://github.com"]
 	helper = !gh auth git-credential
 [credential "https://gist.github.com"]
 	helper = !gh auth git-credential
+{{ end -}}
 {{- if eq .chezmoi.os "windows" }}
 [gpg]
 	program = c:/Program Files (x86)/GnuPG/bin/gpg.exe
-{{- end }}
+{{ end -}}
