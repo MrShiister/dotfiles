@@ -12,6 +12,9 @@ contexts:
       GPG_AGENT_FORWARDING:
         userProvided: true
         value: "true"
+      SSH_INJECT_DOCKER_CREDENTIALS:
+        userProvided: true
+        value: "false"
       TELEMETRY:
         userProvided: true
         value: "false"
