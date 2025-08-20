@@ -110,4 +110,15 @@ return {
       timeout_ms = 4000,
     },
   },
+
+  {
+    -- Set up the following env in a .tmp file:
+    --   export JENKINS_USER_ID=...
+    --   export JENKINS_URL=https://...
+    --   export JENKINS_PASSWORD=...
+    -- then execute '. ./tmp' before running nvim.
+    -- Call 'lua require("jenkinsfile_linter").validate()' in a Jenkinsfile.
+    "ckipp01/nvim-jenkinsfile-linter",
+    requires = { "nvim-lua/plenary.nvim" },
+  },
 }
