@@ -16,6 +16,7 @@ packages="${packages} git zsh"
           (or
             (.chezmoi.kernel.osrelease | lower | contains "microsoft")
             (.chezmoi.kernel.osrelease | lower | contains "azure")
+            (.chezmoi.kernel.osrelease | lower | contains "flatcar")
           )
 }}
 packages="${packages} socat"
