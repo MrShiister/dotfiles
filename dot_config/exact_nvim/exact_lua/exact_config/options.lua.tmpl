@@ -11,6 +11,7 @@ vim.opt.clipboard = "unnamedplus"
   (or
     (.chezmoi.kernel.osrelease | lower | contains "microsoft")
     (.chezmoi.kernel.osrelease | lower | contains "azure")
+    (.chezmoi.kernel.osrelease | lower | contains "flatcar")
   )
 }}
 -- The following configuration is needed when the host system is WSL.
