@@ -6,7 +6,7 @@
 mkdir -p $HOME/.oh-my-zsh/completions/
 $HOME/.local/bin/chezmoi completion zsh > $HOME/.oh-my-zsh/completions/_chezmoi
 
-packages="tmux fd-find ripgrep"
+packages="tmux fd-find ripgrep pipx"
 {{      if not .is_devcontainer -}}
 packages="${packages} git zsh"
 {{-     end }}
@@ -37,6 +37,8 @@ packages="${packages} gh"
 {{ .sudo }}apt update
 echo "Installing ${packages}"
 {{ .sudo }}apt install -y ${packages}
+# Install restview, an RST previewer
+pipx install restview
 
 {{      if .get_devpod -}}
 echo "Installing devpod"
