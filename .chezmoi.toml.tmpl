@@ -22,4 +22,8 @@ sourceDir = "~/dotfiles"
     get_devpod = {{ $get_devpod }}
 {{ if not $is_devcontainer }}
     signingkey = "UNSET"
+
+[diff]
+    command = "nvim"
+    args = ["-d"]
 {{ end }}
