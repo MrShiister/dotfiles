@@ -64,6 +64,10 @@ input type:keyboard {
 	xkb_variant "dvorak"
 }
 
+input type:touchpad {
+    tap enabled
+  }
+
 ### Key bindings
 #
 # Basics:
@@ -156,6 +160,7 @@ input type:keyboard {
 
     # Make the current focus fullscreen
     bindsym $mod+f fullscreen
+    bindsym XF86Fullscreen fullscreen
 
     # Toggle the current focus between tiling and floating mode
     bindsym $mod+Shift+space floating toggle
@@ -164,7 +169,7 @@ input type:keyboard {
     bindsym $mod+space focus mode_toggle
 
     # Move focus to the parent container
-    bindsym $mod+a focus parent
+    bindsym $mod+g focus parent
 #
 # Scratchpad:
 #
@@ -216,6 +221,7 @@ bindsym $mod+r mode "resize"
     bindsym --locked Alt+XF86MonBrightnessUp exec brightnessctl --device='chromeos::kbd_backlight' set 10%+
     # Special key to take a screenshot with grim
     bindsym Print exec grim
+    exec wl-paste -t text --watch clipman store --no-persist
 
 #
 # Status Bar:
@@ -235,5 +241,8 @@ bar swaybar_command waybar
 #         inactive_workspace #32323200 #32323200 #5c5c5c
 #     }
 # }
+
+# Start input method framework
+exec fcitx5
 
 include /etc/sway/config.d/*

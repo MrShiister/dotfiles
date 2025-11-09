@@ -25,5 +25,6 @@ sourceDir = "~/dotfiles"
 
 [diff]
     command = "nvim"
-    args = ["-d"]
+    args = ["-d", "{{ .Destination }}", "{{ .Target }}"]
+    pager = ""
 {{ end }}
