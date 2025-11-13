@@ -147,7 +147,7 @@ ssh() {
     tmux rename-window "$*"
     command ssh "$@"
     _exitcode=$?
-    tmux rename-window "$(hostname -s)"
+    tmux rename-window "$(hostnamectl hostname)"
     return _exitcode
 }
 
