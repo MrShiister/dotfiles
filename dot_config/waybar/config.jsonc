@@ -26,7 +26,7 @@
         "temperature",
         "backlight",
         "keyboard-state",
-        "sway/language",
+        //"sway/language",
         "battery",
         "battery#bat2",
         "clock",
@@ -68,6 +68,9 @@
         "format-icons": ["", ""],
         "tooltip": true,
         "tooltip-format": "{app}: {title}"
+    },
+    "sway/language": {
+        "format": "{short} {variant}",
     },
     "mpd": {
         "format": "{stateIcon} {consumeIcon}{randomIcon}{repeatIcon}{singleIcon}{artist} - {album} - {title} ({elapsedTime:%M:%S}/{totalTime:%M:%S}) ⸨{songPosition}|{queueLength}⸩ {volume}% ",
