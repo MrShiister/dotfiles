@@ -81,6 +81,8 @@ rm -r $FZF_TAR fzf
 {{      if .is_devcontainer -}}
 git config --global commit.gpgsign true
 git config --global core.editor nvim
+# Install alacritty terminfo
+if ! infocmp alacritty >/dev/null; then curl https://raw.githubusercontent.com/alacritty/alacritty/refs/heads/master/extra/alacritty.info | sudo tic -xe alacritty,alacritty-direct -; fi
 {{ .sudo }}chsh -s /bin/zsh $USER
 {{-     end }}
 
