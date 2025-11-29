@@ -75,14 +75,14 @@ exec swayidle -w \
 # Read `man 5 sway-input` for more information about this section.
 input type:keyboard {
   xkb_numlock enabled
-{{ if eq .chezmoi.hostname "charchlinux" -}}
-	xkb_layout "us"
-	xkb_variant "dvorak"
+{{- if eq .chezmoi.hostname "charchlinux" }}
+  xkb_layout "us"
+  xkb_variant "dvorak"
 }
 
 input type:touchpad {
   tap enabled
-{{- end -}}
+{{- end }}
 }
 
 ### Key bindings
