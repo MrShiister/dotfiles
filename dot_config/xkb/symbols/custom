@@ -1,0 +1,8 @@
+xkb_symbols "basic" {
+    include "us(dvorak)"
+    name[Group1]= "English (US Dvorak Custom)";
+    key <CAPS> { [ Hyper_L ] };
+    modifier_map Mod4 { Hyper_L };
+    key <LWIN> { [ Super_L ] };
+    modifier_map Mod5 { Super_L };
+};
