@@ -42,6 +42,7 @@ output HDMI-A-1 {
 }
 {{- else if eq .chezmoi.hostname "LT010-archlinux" -}}
 output Virtual-1 resolution 1920x1080
+#output Virtual-1 resolution --custom 2560x1440
 {{- end }}
 
 ### Idle configuration
