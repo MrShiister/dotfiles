@@ -5,18 +5,14 @@
 -- Always use clipboard
 vim.opt.clipboard = "unnamedplus"
 
-{{- /* Add the configuration when the system is either WSL or an Azure VM */}}
+{{- /* Add the configuration when the system is WSL */}}
 {{ if and
   (eq .chezmoi.os "linux")
-  (or
-    (.chezmoi.kernel.osrelease | lower | contains "microsoft")
-    (.chezmoi.kernel.osrelease | lower | contains "azure")
-    (.chezmoi.kernel.osrelease | lower | contains "flatcar")
-  )
+  (.chezmoi.kernel.osrelease | lower | contains "microsoft")
 }}
 -- The following configuration is needed when the host system is WSL.
 --
--- This section provides clipboard access through WSL/remote VMs in and outside of containers
+-- This section provides clipboard access through WSL in and outside of containers
 -- Assumes WSL is your local environment, and devpod with ssh provider for remote devcontainer.
 --
 -- 1. install socat on both your WSL and endpoint
