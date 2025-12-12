@@ -29,9 +29,6 @@ export GPG_TTY=$(tty)
 export PATH=$HOME/.local/bin:$HOME/bin:$PATH
 export EDITOR=nvim
 export MANPAGER='nvim +Man!'
-{{- if eq .chezmoi.hostname "LT010-archlinux" }}
-export SSH_AUTH_SOCK=$HOME/.bitwarden-ssh-agent.sock
-{{- end }}
 
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
