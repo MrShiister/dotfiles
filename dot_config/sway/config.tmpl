@@ -81,18 +81,20 @@ exec swayidle -w \
 # Read `man 5 sway-input` for more information about this section.
 {{- if eq .chezmoi.hostname "LT010-archlinux" }}
 set $super Mod5
-{{- end }}
+input type:keyboard {
+  xkb_layout "custom"
+}
+{{ end }}
 input type:keyboard {
   xkb_numlock enabled
-{{- if eq .chezmoi.hostname "charchlinux" }}
-  xkb_layout "us"
+}
+
+input type:pointer {
+  accel_profile flat
 }
 
 input type:touchpad {
   tap enabled
-{{- else if eq .chezmoi.hostname "LT010-archlinux" }}
-	xkb_layout "custom"
-{{- end }}
 }
 
 ### Key bindings
