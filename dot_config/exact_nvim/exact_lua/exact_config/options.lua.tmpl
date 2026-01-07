@@ -5,6 +5,29 @@
 -- Always use clipboard
 vim.opt.clipboard = "unnamedplus"
 
+-- Revert the paste functionality to the original
+local function paste()
+  return {
+    vim.fn.split(vim.fn.getreg(""), "\n"),
+    vim.fn.getregtype(""),
+  }
+end
+
+-- Use the system clipboard sequence when in a devpod
+if vim.env.DEVPOD == "true" then
+  vim.g.clipboard = {
+    name = "OSC 52",
+    copy = {
+      ["+"] = require("vim.ui.clipboard.osc52").copy("+"),
+      ["*"] = require("vim.ui.clipboard.osc52").copy("*"),
+    },
+    paste = {
+      ["+"] = paste,
+      ["*"] = paste,
+    },
+  }
+end
+
 {{- /* Add the configuration when the system is WSL */}}
 {{ if and
   (eq .chezmoi.os "linux")
@@ -25,14 +48,6 @@ vim.opt.clipboard = "unnamedplus"
 --     1. add `RemoteForward 8121 localhost:8121` in `.ssh/config` to your remote machine or container
 --     2. run on a new WSL shell:
 --          socat tcp-listen:8121,fork,bind=0.0.0.0 EXEC:'clip.exe'
-
--- Revert the paste functionality to the original
-local function paste()
-  return {
-    vim.fn.split(vim.fn.getreg(""), "\n"),
-    vim.fn.getregtype(""),
-  }
-end
 
 -- Check that the current machine is on WSL
 if vim.fn.has("wsl") == 1 then
