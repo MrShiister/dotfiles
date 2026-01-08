@@ -140,16 +140,6 @@ alias nn='nvim -c "lua require(\"persistence\").load({last=true})"'
 alias n="nvim ."
 alias t="tmux -u new-session -As0"
 
-# Hook ssh to set tmux window title to hostname
-ssh() {
-    tmux rename-window "$*"
-    command ssh "$@"
-    _exitcode=$?
-    tmux rename-window "$(hostnamectl hostname)"
-    return _exitcode
-}
-
-
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
