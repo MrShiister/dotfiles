@@ -114,10 +114,10 @@
         // }
     },
     "clock": {
-        "format": "{:%a %b %d %H:%M}",
+        "format": "{:%A, %B %d, %Y %H:%M}",
         "timezone": "Asia/Singapore",
         "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
-        "format-alt": "{:%A, %B %d, %Y %H:%M}",
+        "format-alt": "{:%a %b %d %H:%M}",
         "interval": 10
     },
     "cpu": {
