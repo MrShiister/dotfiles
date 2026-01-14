@@ -231,6 +231,11 @@ label:focus {
     background-color: red;
 }
 
+#custom-notification {
+    background-color: purple;
+    padding: 0 10px;
+}
+
 #temperature {
     background-color: #f0932b;
 }
