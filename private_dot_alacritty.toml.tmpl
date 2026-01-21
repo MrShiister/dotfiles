@@ -4,6 +4,7 @@ padding = { x = 5, y = 3 }
 dynamic_padding = true
 resize_increments = true
 dimensions = { columns = 176, lines = 40 }
+opacity = 0.8
 {{ if and (eq .chezmoi.os "linux") (.chezmoi.kernel.osrelease | lower | contains "microsoft") -}}
 startup_mode = "Fullscreen"
 {{- end }}
