@@ -41,8 +41,9 @@ output HDMI-A-1 {
   transform 270
 }
 {{- else if eq .chezmoi.hostname "LT010-archlinux" -}}
-#output Virtual-1 resolution 1920x1080
 output Virtual-1 resolution --custom 2560x1440
+# Shortcut to change resolution
+bindsym $mod+Shift+r output Virtual-1 resolution 1920x1080
 {{- end }}
 
 ### Idle configuration
@@ -227,11 +228,21 @@ mode "resize" {
     bindsym $up resize shrink height 10px
     bindsym $right resize grow width 10px
 
+    bindsym Shift+$left resize shrink width 100px
+    bindsym Shift+$down resize grow height 100px
+    bindsym Shift+$up resize shrink height 100px
+    bindsym Shift+$right resize grow width 100px
+
     # Ditto, with arrow keys
     bindsym Left resize shrink width 10px
     bindsym Down resize grow height 10px
     bindsym Up resize shrink height 10px
     bindsym Right resize grow width 10px
+
+    bindsym Shift+Left resize shrink width 100px
+    bindsym Shift+Down resize grow height 100px
+    bindsym Shift+Up resize shrink height 100px
+    bindsym Shift+Right resize grow width 100px
 
     # Return to default mode
     bindsym Return mode "default"
