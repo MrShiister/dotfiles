@@ -267,9 +267,10 @@ bindsym $mod+r mode "resize"
     bindsym --locked XF86MonBrightnessUp exec brightnessctl set 5%+
     bindsym --locked Alt+XF86MonBrightnessDown exec brightnessctl --device='chromeos::kbd_backlight' set 10%-
     bindsym --locked Alt+XF86MonBrightnessUp exec brightnessctl --device='chromeos::kbd_backlight' set 10%+
-    # Special key to take a screenshot with grim
-    bindsym Print exec grim
-    exec wl-paste -t text --watch clipman store --no-persist
+    # Special key to take a regional screenshot (click titlebar of any window)
+    bindsym $mod+button1 exec grim -g "$(slurp)" - | wl-copy
+    # Start input method framework
+    exec fcitx5
 
 #
 # Status Bar:
@@ -289,8 +290,4 @@ bar swaybar_command waybar
 #         inactive_workspace #32323200 #32323200 #5c5c5c
 #     }
 # }
-
-# Start input method framework
-exec fcitx5
-
 include /etc/sway/config.d/*
