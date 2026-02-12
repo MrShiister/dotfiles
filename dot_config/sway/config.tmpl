@@ -21,7 +21,11 @@ set $menu bemenu-run
 ### Output configuration
 #
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
+{{ if eq .chezmoi.hostname "LT010-archlinux" -}}
+output * bg /usr/share/backgrounds/archlinux/archbtw.png fill
+{{- else -}}
 output * bg /usr/share/backgrounds/archlinux/awesome.png fill
+{{- end }}
 #
 # Example configuration:
 #
@@ -43,7 +47,9 @@ output HDMI-A-1 {
 {{- else if eq .chezmoi.hostname "LT010-archlinux" -}}
 output Virtual-1 resolution --custom 2560x1440
 # Shortcut to change resolution
-bindsym $mod+Shift+r output Virtual-1 resolution 1920x1080
+bindsym $mod+Mod1+1 output Virtual-1 resolution 1920x1080
+bindsym $mod+Mod1+2 output Virtual-1 resolution --custom 2560x1440
+bindsym $mod+Mod1+3 output Virtual-1 resolution --custom 1080x1920
 {{- end }}
 
 ### Idle configuration
