@@ -21,9 +21,7 @@ set $menu bemenu-run
 ### Output configuration
 #
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
-{{ if eq .chezmoi.hostname "LT010-archlinux" -}}
-output * bg /usr/share/backgrounds/archlinux/archbtw.png fill
-{{- else -}}
+{{ if ne .chezmoi.hostname "LT010-archlinux" -}}
 output * bg /usr/share/backgrounds/archlinux/awesome.png fill
 {{- end }}
 #
