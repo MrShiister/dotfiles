@@ -189,6 +189,16 @@ input type:touchpad {
     bindsym $mod+Alt+Down move workspace to output down
     bindsym $mod+Alt+Up move workspace to output up
     bindsym $mod+Alt+Right move workspace to output right
+    # Swap workspace with monitor
+    bindsym $mod+Ctrl+$left mark "previous"; focus output left; move workspace to output right; [con_mark="previous"] focus; move workspace to output left; unmark "previous"
+    bindsym $mod+Ctrl+$right mark "previous"; focus output right; move workspace to output left; [con_mark="previous"] focus; move workspace to output right; unmark "previous"
+    bindsym $mod+Ctrl+$up mark "previous"; focus output up; move workspace to output down; [con_mark="previous"] focus; move workspace to output up; unmark "previous"
+    bindsym $mod+Ctrl+$down mark "previous"; focus output down; move workspace to output up; [con_mark="previous"] focus; move workspace to output down; unmark "previous"
+    # Ditto, with arrow keys
+    bindsym $mod+Ctrl+Left mark "previous"; focus output left; move workspace to output right; [con_mark="previous"] focus; move workspace to output left; unmark "previous"
+    bindsym $mod+Ctrl+Right mark "previous"; focus output right; move workspace to output left; [con_mark="previous"] focus; move workspace to output right; unmark "previous"
+    bindsym $mod+Ctrl+Up mark "previous"; focus output up; move workspace to output down; [con_mark="previous"] focus; move workspace to output up; unmark "previous"
+    bindsym $mod+Ctrl+Down mark "previous"; focus output down; move workspace to output up; [con_mark="previous"] focus; move workspace to output down; unmark "previous"
     # Note: workspaces can have any name you want, not just numbers.
     # We just use 1-10 as the default.
 #
