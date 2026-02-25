@@ -216,9 +216,10 @@
 		    "menu": "on-click",
 		    "menu-file": "$HOME/.config/waybar/power_menu.xml", // Menu file in resources folder
 		    "menu-actions": {
+		    	"lock": "swaylock -f -c 000000",
+		    	"suspend": "systemctl suspend",
 		    	"shutdown": "shutdown now",
 		    	"reboot": "reboot",
-		    	"suspend": "systemctl suspend",
 		    	//"hibernate": "systemctl hibernate"
 		    }
     },
