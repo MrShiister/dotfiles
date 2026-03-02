@@ -44,10 +44,12 @@ output HDMI-A-1 {
 }
 {{- else if eq .chezmoi.hostname "LT010-archlinux" -}}
 output Virtual-1 resolution --custom 2560x1440
+output Virtual-2 resolution --custom 2560x1440
+
 # Shortcut to change resolution
-bindsym $mod+Mod1+1 output Virtual-1 resolution 1920x1080
-bindsym $mod+Mod1+2 output Virtual-1 resolution --custom 2560x1440
-bindsym $mod+Mod1+3 output Virtual-1 resolution --custom 1080x1920
+bindsym $mod+Mod1+1 output - resolution 1920x1080
+bindsym $mod+Mod1+2 output - resolution --custom 2560x1440
+bindsym $mod+Mod1+3 output - resolution --custom 1080x1920
 {{- end }}
 
 ### Idle configuration
