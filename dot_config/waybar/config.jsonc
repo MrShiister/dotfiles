@@ -10,10 +10,10 @@
         "sway/workspaces",
         "sway/mode",
         "sway/scratchpad",
-        "custom/media"
+        "custom/media",
+        "sway/window"
     ],
     "modules-center": [
-        "sway/window"
     ],
     "modules-right": [
         "mpd",
@@ -73,6 +73,15 @@
     "sway/language": {
         "format": "{short} {variant}",
     },
+    "sway/window": {
+        "format": "{title}",
+        "max-length": 100,
+        "rewrite": {
+            "(.*) - Brave": "🌎 $1",
+            "nvim (.*)": " $1"
+            //"(.*) - zsh": " [$1]"
+        },
+    },
     "mpd": {
         "format": "{stateIcon} {consumeIcon}{randomIcon}{repeatIcon}{singleIcon}{artist} - {album} - {title} ({elapsedTime:%M:%S}/{totalTime:%M:%S}) ⸨{songPosition}|{queueLength}⸩ {volume}% ",
         "format-disconnected": "Disconnected ",
@@ -115,11 +124,11 @@
         // }
     },
     "clock": {
-        "format": "{:%A, %B %d, %Y %H:%M}",
+        "format": "{:%A, %B %d, %Y %H:%M:%S}",
         "timezone": "Asia/Singapore",
         "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
         "format-alt": "{:%a %b %d %H:%M}",
-        "interval": 10
+        "interval": 1
     },
     "cpu": {
         "format": "{usage}% ",
@@ -201,7 +210,7 @@
     "custom/media": {
         "format": "{icon} {text}",
         "return-type": "json",
-        "max-length": 40,
+        "max-length": 80,
         "format-icons": {
             "spotify": "",
             "default": "🎜"
@@ -212,16 +221,16 @@
     },
     "custom/power": {
         "format" : "⏻ ",
-		    "tooltip": false,
-		    "menu": "on-click",
-		    "menu-file": "$HOME/.config/waybar/power_menu.xml", // Menu file in resources folder
-		    "menu-actions": {
-		    	"lock": "swaylock -f -c 000000",
-		    	"suspend": "systemctl suspend",
-		    	"shutdown": "shutdown now",
-		    	"reboot": "reboot",
-		    	//"hibernate": "systemctl hibernate"
-		    }
+        "tooltip": false,
+        "menu": "on-click",
+        "menu-file": "$HOME/.config/waybar/power_menu.xml", // Menu file in resources folder
+        "menu-actions": {
+          "lock": "swaylock -f -c 000000",
+          "suspend": "systemctl suspend",
+          "shutdown": "shutdown now",
+          "reboot": "reboot",
+          //"hibernate": "systemctl hibernate"
+        }
     },
     "custom/notification": {
         "tooltip": true,
@@ -244,3 +253,5 @@
         "escape": true
     }
 }
+
+// vim: expandtab shiftwidth=4
