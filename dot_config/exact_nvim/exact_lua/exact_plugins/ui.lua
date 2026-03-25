@@ -124,17 +124,27 @@ return {
 
   {
     "ibhagwan/fzf-lua",
-    opts = function()
-      local config = require("fzf-lua.config")
-      config.defaults.keymap.fzf["ctrl-b"] = "half-page-up"
-      config.defaults.keymap.fzf["ctrl-f"] = "half-page-down"
-      config.defaults.keymap.fzf["ctrl-d"] = "preview-page-down"
-      config.defaults.keymap.fzf["ctrl-u"] = "preview-page-up"
-      config.defaults.keymap.builtin["<c-d>"] = "preview-page-down"
-      config.defaults.keymap.builtin["<c-u>"] = "preview-page-up"
-      config.defaults.keymap.builtin["<c-f>"] = false
-      config.defaults.keymap.builtin["<c-b>"] = false
-    end,
+    ---@module "fzf-lua"
+    ---@type fzf-lua.Config
+    ---@diagnostic disable: missing-fields
+    opts = {
+      defaults = {
+        keymap = {
+          fzf = {
+            ["ctrl-b"] = "half-page-up",
+            ["ctrl-f"] = "half-page-down",
+            ["ctrl-d"] = "preview-page-down",
+            ["ctrl-u"] = "preview-page-up",
+          },
+          builtin = {
+            ["<c-d>"] = "preview-page-down",
+            ["<c-u>"] = "preview-page-up",
+            ["<c-f>"] = "ignore",
+            ["<c-b>"] = "ignore",
+          },
+        },
+      },
+    },
   },
 
   {
