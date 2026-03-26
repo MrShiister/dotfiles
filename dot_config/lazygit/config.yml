@@ -16,6 +16,10 @@ gui:
   # If empty, do not show icons.
   nerdFontsVersion: '3'
 
+  # Status panel view.
+  # One of 'dashboard' (default) | 'allBranchesLog'
+  statusPanelView: 'allBranchesLog'
+
 # Config relating to git
 git:
   # If true, lazygit will automatically stage files that used to have merge
@@ -23,6 +27,12 @@ git:
   # continue a merge or rebase if you've resolved all conflicts. If false, it
   # won't do either of these things.
   autoStageResolvedConflicts: false
+
+  # Commands used to display git log of all branches in the main window, they will
+  # be cycled in order of appearance (array of strings)
+  allBranchesLogCmds:
+    - git log --graph --all --color=always --abbrev-commit --decorate --date=relative --pretty=oneline
+    - git log --graph --all --color=always --abbrev-commit --decorate --date=relative --pretty=medium
 
 # If true, don't display introductory popups upon opening Lazygit.
 disableStartupPopups: true
