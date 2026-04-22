@@ -18,7 +18,8 @@
     "modules-right": [
         "mpd",
         "idle_inhibitor",
-        "pulseaudio",
+        // "pulseaudio",
+        "wireplumber",
         "network",
         "power-profiles-daemon",
         "cpu",
@@ -188,7 +189,8 @@
         "format-disconnected": "Disconnected 󰅛",
         "format-alt": "{ifname}: {ipaddr}/{cidr} 󱂇"
     },
-    "pulseaudio": {
+    // "pulseaudio": {
+    "wireplumber": {
         // "scroll-step": 1, // %, can be a float
         "format": "{volume}% {icon}  {format_source}",
         "format-bluetooth": "{volume}% {icon}   {format_source} {desc}",
