@@ -149,12 +149,9 @@ return {
       "lewis6991/async.nvim",
     },
     lazy = false,
-    ---@module "refactoring"
-    opts = {
-      keys = {
-        -- stylua: ignore
-        { "<leader>ce", function() require("refactoring").select_refactor() end, desc = "Select refactor" },
-      },
+    keys = {
+      -- stylua: ignore
+      { "<leader>ce", function()   require("refactoring").select_refactor() end, desc = "Select refactor" },
     },
   },
 
