@@ -144,6 +144,21 @@ return {
   },
 
   {
+    "ThePrimeagen/refactoring.nvim",
+    dependencies = {
+      "lewis6991/async.nvim",
+    },
+    lazy = false,
+    ---@module "refactoring"
+    opts = {
+      keys = {
+        -- stylua: ignore
+        { "<leader>ce", function() require("refactoring").select_refactor() end, desc = "Select refactor" },
+      },
+    },
+  },
+
+  {
     -- Set up the following env in a .tmp file:
     --   export JENKINS_USER_ID=...
     --   export JENKINS_URL=https://...
