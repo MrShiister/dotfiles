@@ -8,6 +8,8 @@ chezmoi:template:missing-key=zero
 	gpgsign = true
 [core]
 	editor = nvim
+[init]
+	defaultBranch = main
 {{- if not .is_devcontainer }}
 [credential "https://github.com"]
 	helper = !gh auth git-credential
