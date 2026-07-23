@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<interface>
+  <object class="GtkMenu" id="menu">
+    <child>
+      <object class="GtkMenuItem" id="dvorak">
+        <property name="label">Dvorak</property>
+      </object>
+    </child>
+    <child>
+      <object class="GtkMenuItem" id="scroll-factor">
+        <property name="label">Scroll Factor</property>
+      </object>
+    </child>
+    <child>
+      <object class="GtkMenuItem" id="resolution">
+        <property name="label">Resolution</property>
+      </object>
+    </child>
+    <child>
+      <object class="GtkSeparatorMenuItem" id="delimiter1"/>
+    </child>
+    <child>
+      <object class="GtkMenuItem" id="all">
+        <property name="label">All</property>
+      </object>
+    </child>
+  </object>
+</interface>
+
