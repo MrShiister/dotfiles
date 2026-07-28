@@ -160,4 +160,14 @@ return {
     -- https://github.com/OXY2DEV/markview.nvim/issues/365#issuecomment-3028249737
     priority = 49,
   },
+
+  {
+    -- Install ueberzugpp and imagemagick
+    "3rd/image.nvim",
+    build = false, -- so that it doesn't build the rock https://github.com/3rd/image.nvim/issues/91#issuecomment-2453430239
+    opts = {
+      backend = "ueberzug",
+      processor = "magick_cli",
+    },
+  },
 }
