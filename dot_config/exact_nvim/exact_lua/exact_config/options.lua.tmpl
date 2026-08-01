@@ -13,8 +13,8 @@ local function paste()
   }
 end
 
--- Use the system clipboard sequence when in a devpod
-if vim.env.DEVPOD == "true" then
+-- Use the system clipboard sequence when in a devcontainer
+if vim.env.DEVPOD == "true" or vim.env.DEVSY == "true" then
   vim.g.clipboard = {
     name = "OSC 52",
     copy = {
@@ -36,7 +36,7 @@ end
 -- The following configuration is needed when the host system is WSL.
 --
 -- This section provides clipboard access through WSL in and outside of containers
--- Assumes WSL is your local environment, and devpod with ssh provider for remote devcontainer.
+-- Assumes WSL is your local environment, and devpod/devsy with ssh provider for remote devcontainer.
 --
 -- 1. install socat on both your WSL and endpoint
 -- 2. choose an arbitrary port (here 8121. replace all 8121 with your chosen port)

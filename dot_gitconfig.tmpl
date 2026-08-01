@@ -15,8 +15,6 @@ chezmoi:template:missing-key=zero
 	helper = !gh auth git-credential
 [credential "https://gist.github.com"]
 	helper = !gh auth git-credential
-[credential]
-  helper = !'/usr/local/bin/devpod' agent git-credentials --port 12049
 {{ end -}}
 {{- if eq .chezmoi.os "windows" }}
 [gpg]

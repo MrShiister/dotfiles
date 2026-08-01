@@ -3,12 +3,12 @@
 
 {{- /* Set default options. */ -}}
 {{- $get_gh := false -}}
-{{- $get_devpod := false -}}
+{{- $get_devsy := false -}}
 
 {{- /* Prompt options on supported machines. */ -}}
 {{- if and (not $is_devcontainer) (eq .chezmoi.os "linux") (eq .chezmoi.osRelease.id "ubuntu" "debian") -}}
 {{-   $get_gh = promptBool "Install gh cli" true -}}
-{{-   $get_devpod = promptBool "Install devpod cli" true -}}
+{{-   $get_devsy = promptBool "Install devsy cli" true -}}
 {{- end -}}
 
 {{- if $is_devcontainer -}}
@@ -19,7 +19,7 @@ sourceDir = "~/dotfiles"
     is_devcontainer = {{ $is_devcontainer }}
     sudo = {{ if not $is_root }}"sudo "{{ else }}""{{ end }}
     get_gh = {{ $get_gh }}
-    get_devpod = {{ $get_devpod }}
+    get_devsy = {{ $get_devsy }}
 {{ if not $is_devcontainer }}
     signingkey = "UNSET"
 
