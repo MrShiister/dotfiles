@@ -2,8 +2,8 @@
 <interface>
   <object class="GtkMenu" id="menu">
     <child>
-      <object class="GtkMenuItem" id="dvorak">
-        <property name="label">Dvorak</property>
+      <object class="GtkMenuItem" id="qwerty">
+        <property name="label">Qwerty</property>
       </object>
     </child>
     <child>

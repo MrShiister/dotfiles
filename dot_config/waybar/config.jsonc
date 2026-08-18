@@ -228,10 +228,10 @@
         "menu": "on-click",
         "menu-file": "$HOME/.config/waybar/input.xml", // Menu file in resources folder
         "menu-actions": {
-          "dvorak": "swaymsg 'input type:keyboard xkb_layout custom-dvorak'",
-          "scroll-factor": "swaymsg 'input type:pointer scroll_factor 0.2'",
-          "resolution": "swaymsg 'output - resolution 1920x1080'",
-          "all": "swaymsg 'input type:keyboard xkb_layout custom-dvorak; input type:pointer scroll_factor 0.2; output - resolution 1920x1080'"
+          "qwerty": "swaymsg 'input type:keyboard xkb_layout custom'",
+          "scroll-factor": "swaymsg 'input type:pointer scroll_factor 1'",
+          "resolution": "swaymsg 'output - resolution --custom 2560x1440'",
+          "all": "swaymsg 'input type:keyboard xkb_layout custom; input type:pointer scroll_factor 1; output - resolution --custom 2560x1440'"
         }
     },
     "custom/power": {

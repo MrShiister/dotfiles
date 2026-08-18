@@ -48,7 +48,7 @@ output Virtual-1 resolution --custom 2560x1440 position 2560,0
 output Virtual-2 resolution --custom 2560x1440 position 0,0
 
 # Shortcut to change resolution
-bindsym $mod+Mod1+1 output - resolution 1920x1080
+bindsym $mod+Mod1+1 input type:keyboard xkb_layout custom-dvorak; input type:pointer scroll_factor 0.2; output - resolution 1920x1080
 bindsym $mod+Mod1+2 output - resolution --custom 2560x1440
 bindsym $mod+Mod1+3 output - resolution --custom 1080x1920
 {{- end }}
