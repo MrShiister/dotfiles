@@ -8,8 +8,8 @@ install.sh
 .gitconfig
 .gnupg
 {{- end }}
-{{ if stat (joinPath .chezmoi.homeDir ".devpod" "config.yaml") -}}
-.devpod/config.yaml
+{{ if stat (joinPath .chezmoi.homeDir ".devsy" "config.yaml") -}}
+.devsy/config.yaml
 {{- end }}
 {{ if eq .chezmoi.os "windows" -}}
 install-packages.sh
